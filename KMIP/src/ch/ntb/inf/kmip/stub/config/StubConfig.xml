@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * StubConfig.xml
+ * ******************************************************************
+ *     __ __ __  ___________ 
+ *    / //_//  |/  /  _/ __ \	  .''.
+ *   / ,<  / /|_/ // // /_/ /	 /.-. '____________
+ *  / /| |/ /  / // // ____/ 	 \'-' .__"__""__"-'
+ * /_/ |_/_/  /_/___/_/      	  ',,'
+ * 
+ * ******************************************************************
+ * Description:
+ * The StubConfig file provides the needful flexibility for the 
+ * interchangeability of the client side. It contains a set of 
+ * init-parameters, where the components of the KMIP-System-
+ * Architecture are defined. Feel free to change the 
+ * parameter-values as needed. The parameter-name has to stay 
+ * unaltered.
+ *
+ * author     Stefanie Meile <stefaniemeile(at)gmail.com>
+ * author     Michael Guster <michael.guster(at)gmail.com>
+ * org.       University of Applied Sciences Buchs NTB, (CH)
+ * copyright  Copyright (c) 2013, Stefanie Meile, Michael Guster
+ * license    Simplified BSD License (see LICENSE.TXT)
+ * version    1.0, 2013/08/09
+ * since      File available since Release 1.0
+ */
+-->
+<stub-config>
+	<init-param>
+		<description>
+			Define the fully qualified name of your Encoder
+		</description>
+		<param-name>Encoder</param-name>
+		<param-value>ch.ntb.inf.kmip.process.encoder.KMIPEncoder</param-value>
+	</init-param>
+
+	
+	<init-param>
+		<description>
+			Define the fully qualified name of your Decoder
+		</description>
+		<param-name>Decoder</param-name>
+		<param-value>ch.ntb.inf.kmip.process.decoder.KMIPDecoder</param-value>
+	</init-param>
+
+	
+	<init-param>
+		<description>
+			Define the fully qualified name of your TransportLayer
+			HTTP:				ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTP
+			HTTPS LocalHost: 	ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPSLocalHost
+			HTTPS WWW: 			ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPS
+		</description>
+		<param-name>TransportLayer</param-name>
+		<param-value>ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPSLocalHost</param-value>
+	</init-param>
+
+	
+	<init-param>
+		<description>
+			Define the URL or IP:Port of your Server
+			KMIPStubTransportLayer: 		localhost:5555
+			KMIPStubTransportLayerHTTP:		http://localhost:8090/KMIPWebAppServer/KMIPServlet
+			KMIPStubTransportLayerHTTPS:	https://localhost:8443/KMIPWebAppServer/KMIPServlet
+		</description>
+		<param-name>TargetHostname</param-name>
+		<param-value>https://localhost:8443/KMIPWebAppServer/KMIPServlet</param-value>
+	</init-param>
+
+	
+	<init-param>
+		<description>
+			Define the Test-KLMS for Use Case String compare
+			NONE = 0
+			NTB = 1
+		</description>
+		<param-name>Testing</param-name>
+		<param-value>1</param-value>
+	</init-param>
+	
+	
+	<init-param>
+		<description>
+			Define the fully qualified path name of your Keystore
+			NTB: D:\\keystore\\keystore.jks
+		</description>
+		<param-name>KeyStoreLocation</param-name>
+		<param-value>D:\\keystore\\keystore.jks</param-value>
+	</init-param>
+	
+	
+	<init-param>
+		<description>
+			Define the password of your Keystore
+			NTB: password
+		</description>
+		<param-name>KeyStorePW</param-name>
+		<param-value>password</param-value>
+	</init-param>
+
+</stub-config>

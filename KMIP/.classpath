@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="KLMSDBLibs"/>
+	<classpathentry kind="src" path="KLMSDB"/>
+	<classpathentry kind="src" path="KLMS"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/KMIPUtils"/>
+	<classpathentry kind="lib" path="libs/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/jpa-api.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/classmate-0.5.4.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/ehcache-core-2.4.6.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-commons-annotations-4.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-core-4.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-ehcache-4.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-entitymanager-4.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/hibernate-jpamodelgen-1.1.1.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/jandex-1.0.3.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/jboss-logging-3.1.0.CR2.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/hibernate/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="KLMSDBLibs/jdbc/h2-1.3.148.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

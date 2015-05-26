@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhhe6wdnzs3nqosl">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="jdt:e_class:src:kmipclient.KMIPClientInterface">
+			<property name="bounds" value="695,75,228,103"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmipclient.KMIPClient">
+			<property name="bounds" value="235,60,268,176"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:e_field:src:kmipclient.KMIPClient.encoder">
+				<property name="bounds" value="60,33,0,0"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:e_field:src:kmipclient.KMIPClient.transportLayer">
+				<property name="bounds" value="60,33,0,0"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:kmipclient.KMIPClient:KMIPClientInterface">
+				<property name="sourceAnchor" value="508,151"/>
+				<property name="targetAnchor" value="700,151"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

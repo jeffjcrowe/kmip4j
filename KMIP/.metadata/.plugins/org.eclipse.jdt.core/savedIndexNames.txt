@@ -1,0 +1,10 @@
+INDEX VERSION 1.126+M:\eigene_dateien\Bachelorarbeit\2013_smeile_mguster\Software\Design\.metadata\.plugins\org.eclipse.jdt.core
+3405099300.index
+123651227.index
+3876483870.index
+610529648.index
+3789494310.index
+1162260928.index
+74655844.index
+400425822.index
+1650786892.index

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="eqibohe73m3wz74yi58">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="jdt:e_class:src:kmip.process.encoder.KMIPEncoderTTLVObject">
+			<property name="bounds" value="95,75,341,401"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:kmip.encoder.KMIPEncoder:KMIPEncoderInterface">
+				<property name="sourceAnchor" value="461,157"/>
+				<property name="targetAnchor" value="520,157"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:kmip.process.encoder.KMIPEncoderTTLVObject:KMIPEncoderInterfaceTTLV">
+				<property name="sourceAnchor" value="441,317"/>
+				<property name="targetAnchor" value="520,317"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.encoder.KMIPEncoder">
+			<property name="bounds" value="795,235,242,521"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:kmip.process.encoder.KMIPEncoder:KMIPEncoderInterface">
+				<property name="sourceAnchor" value="876,240"/>
+				<property name="targetAnchor" value="876,134"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+			<reference referencedUin="jdt:l_dpn:src:kmip.process.encoder.KMIPEncoder:lnkKMIPEncoderInterface">
+				<property name="sourceAnchor" value="573,279"/>
+				<property name="targetAnchor" value="573,195"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.encoder.KMIPEncoderInterfaceTTLV">
+			<property name="bounds" value="515,255,193,115"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.encoder.Interface1">
+			<property name="bounds" value="795,75,235,128"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.encoder.KMIPEncoderInterface">
+			<property name="bounds" value="795,15,200,114"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

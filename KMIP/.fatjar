@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Sep 11 11:24:47 CEST 2013
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=kmip4j.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|KMIP>~ch/~ntb/~inf/~klms/;<po|KMIP>~hibernate/;<po|KMIP>~jdbc/;<po|KMIP>~META-INF/;<po|KMIP>~jpa-api.jar;<jar|jpa-api.jar>;<jar|antlr-2.7.7.jar>;<jar|classmate-0.5.4.jar>;<jar|commons-collections-3.2.1.jar>;<jar|dom4j-1.6.1.jar>;<jar|ehcache-core-2.4.6.jar>;<jar|hibernate-commons-annotations-4.0.1.Final.jar>;<jar|hibernate-core-4.0.0.Final.jar>;<jar|hibernate-ehcache-4.0.0.Final.jar>;<jar|hibernate-entitymanager-4.0.0.Final.jar>;<jar|hibernate-jpa-2.0-api-1.0.1.Final.jar>;<jar|hibernate-jpamodelgen-1.1.1.Final.jar>;<jar|jandex-1.0.3.Final.jar>;<jar|javassist-3.12.1.GA.jar>;<jar|jboss-logging-3.1.0.CR2.jar>;<jar|jboss-transaction-api_1.1_spec-1.0.0.Final.jar>;<jar|jta-1.1.jar>;<jar|log4j-1.2.16.jar>;<jar|slf4j-api-1.6.1.jar>;<jar|slf4j-log4j12-1.6.1.jar>;<jar|h2-1.3.148.jar>;<jar|log4j-1.2.17.jar>
+includes=

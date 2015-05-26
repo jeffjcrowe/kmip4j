@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryInfos>
+<libraryInfo home="R:\together" version="1.5.0_14">
+<bootpath>
+<entry path="R:\together\jre\lib\rt.jar"/>
+<entry path="R:\together\jre\lib\i18n.jar"/>
+<entry path="R:\together\jre\lib\sunrsasign.jar"/>
+<entry path="R:\together\jre\lib\jsse.jar"/>
+<entry path="R:\together\jre\lib\jce.jar"/>
+<entry path="R:\together\jre\lib\charsets.jar"/>
+<entry path="R:\together\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="R:\together\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="R:\together\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhhdwujeaoo25ryk">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumObjectType">
+			<property name="bounds" value="662,1018,181,281"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="collapsedCompartments" value="Property20"/>
+			<reference referencedUin="jdt:e_method:src:kmip.enumerations.EnumObjectType.EnumObjectType:EnumObjectType~I">
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumKeyFormatType">
+			<property name="bounds" value="266,515,221,461"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumWrappingMethod">
+			<property name="bounds" value="1060,1018,177,221"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumNameType">
+			<property name="bounds" value="5,745,181,181"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumCryptographicAlgorithm">
+			<property name="bounds" value="1324,5,181,563"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumKeyCompressionType">
+			<property name="bounds" value="965,445,301,221"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumBlockCipherMode">
+			<property name="bounds" value="464,1018,178,421"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumPaddingMethod">
+			<property name="bounds" value="1286,605,181,301"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumHashingAlgorithm">
+			<property name="bounds" value="929,5,176,321"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:e_field:src:kmip.enumerations.EnumHashingAlgorithm.SHA_1">
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumKeyRoleType">
+			<property name="bounds" value="383,5,179,481"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumRecommendedCurve">
+			<property name="bounds" value="266,1018,178,381"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumCertificateType">
+			<property name="bounds" value="5,305,180,180"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumUsageLimitsUnit">
+			<property name="bounds" value="1125,5,179,181"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="property:e_property:jdt=e_class=src=kmip.enumerations.EnumUsageLimitsUnit:value">
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumState">
+			<property name="bounds" value="863,1018,177,241"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumRevocationReasonCode">
+			<property name="bounds" value="5,5,177,261"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumLinkType">
+			<property name="bounds" value="766,605,179,261"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumBatchError">
+			<property name="bounds" value="1125,225,122,174"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumDerivationMethod">
+			<property name="bounds" value="582,5,165,238"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumCertificateRequestType">
+			<property name="bounds" value="1257,1238,194,190"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumOpaqueDataType">
+			<property name="bounds" value="929,365,158,50"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumSecretDataType">
+			<property name="bounds" value="5,1478,152,158"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumCredentialType">
+			<property name="bounds" value="202,5,161,142"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumResultStatus">
+			<property name="bounds" value="582,285,132,190"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumPutFunction">
+			<property name="bounds" value="965,705,185,181"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumResultReason">
+			<property name="bounds" value="5,1018,241,414"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumSplitKeyMethod">
+			<property name="bounds" value="1257,1018,184,174"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumValidityIndicator">
+			<property name="bounds" value="1574,5,153,174"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumQueryFunction">
+			<property name="bounds" value="5,525,188,190"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumOperation">
+			<property name="bounds" value="767,5,142,574"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumCancellationResult">
+			<property name="bounds" value="582,505,164,206"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.enumerations.EnumType">
+			<property name="bounds" value="185,1478,201,317"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

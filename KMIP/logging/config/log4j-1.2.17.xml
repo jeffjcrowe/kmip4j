@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+  <appender name="ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+    <param name="Target" value="System.out"/>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%-5p :: %m%n" />
+    </layout>
+  </appender>
+  
+  <appender name="Log4jViewer" class="org.apache.log4j.net.SocketAppender">
+    <param name="remoteHost" value="localhost"/>
+    <param name="port" value="4447"/>
+    <param name="locationInfo" value="true"/>
+  </appender>
+  
+  <appender name="RFAppender" class="org.apache.log4j.RollingFileAppender"> 
+    <param name="file" value="logging/logs/KMIPConsoleLog.log"/>
+    <param name="MaxFileSize" value="100KB"/>
+    <!-- Keep 1 backup file -->
+    <param name="MaxBackupIndex" value="1"/>
+	<!-- Allways create a new file -->
+	<param name="Append" value="false" />
+    <layout class="org.apache.log4j.PatternLayout"> 
+	  <!-- Pattern Looks: 
+	  "%d{ISO8601} %-5p [%t] %c: %m%n"
+	  2013-04-26 11:24:45,531 DEBUG [main] ch.ntb.inf.kmip.client.gui.KMIPClientGUI: Hello KMIPClient! 
+	  -->
+      <param name="ConversionPattern" value="%d{ISO8601} %-5p [%t] %c: %m%n" />
+    </layout> 
+	<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+			<param name="levelMax" value="DEBUG" />
+	</filter>
+  </appender> 
+  
+  <root>
+    <priority value="DEBUG" />
+    <appender-ref ref="ConsoleAppender" />
+	<appender-ref ref="RFAppender"/>
+	<appender-ref ref="Log4jViewer"/>
+  </root>
+
+</log4j:configuration>

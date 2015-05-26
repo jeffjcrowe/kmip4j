@@ -1,0 +1,47 @@
+<usecases>
+	<usecase id="00000">
+		<name></name>
+		<description></description>
+		<details></details>
+				
+		<requestheaderoptions>
+			<option>
+				<name>XXXXX</name>
+				<value>XXXXX</value>
+			</option>
+		</requestheaderoptions>				
+				
+		<batches>
+			<batch>
+				<operation>XXXXX</operation>
+				
+				<requestbatchitemoptions>
+					<option>
+						<name>XXXXX</name>
+						<value>XXXXX</value>
+					</option>
+				</requestbatchitemoptions>
+				
+				<templateattributestructure>
+					<type>XXXXX</type>
+					<attribute>
+						<name>XXXXX</name>
+						<value>XXXXX</value>
+					</attribute>
+				</templateattributestructure>
+				
+				<attributes>
+					<attribute>
+						<name>XXXXX</name>
+						<value>XXXXX</value>
+					</attribute>
+				</attributes>
+			</batch>
+		</batches>
+		
+		<ttlvrequest></ttlvrequest>
+		<ttlvresponse></ttlvresponse>
+	</usecase>	
+	
+</usecases>
+

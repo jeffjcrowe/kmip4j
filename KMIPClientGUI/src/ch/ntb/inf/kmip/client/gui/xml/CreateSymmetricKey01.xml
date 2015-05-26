@@ -1,0 +1,60 @@
+<usecases>
+	<usecase id="03110">
+		<name>
+			<![CDATA[
+				Create Symmetric Key
+			]]>
+		</name>
+		<description>
+			<![CDATA[
+			In this use-case the client issues a Create request,<br> 
+			whereby the server creates a new symmetric key and <br>
+			returns the Unique Identifier.<br>
+			]]>
+		</description>
+		<details>
+			<![CDATA[
+				Create (symmetric key) <br> 
+				objectType = 00000002 (Symmetric Key), <br> 
+				attributes = { <br> 
+				CryptographicAlgorithm = 00000003 (AES), <br> 
+				CryptographicLength = 128, <br> 
+				CryptographicUsageMask = 0000000C <br> 
+				}
+			]]>
+		</details>
+				
+		<batches>
+			<batch>
+				<operation>Create</operation>
+				
+				<templateattributestructure>
+					<type>TemplateAttribute</type>
+					<attribute>
+						<name>Cryptographic Algorithm</name>
+						<value>AES</value>
+					</attribute>
+					<attribute>
+						<name>Cryptographic Length</name>
+						<value>128</value>
+					</attribute>
+					<attribute>
+						<name>Cryptographic Usage Mask</name>
+						<value>0x0000000C</value>
+					</attribute>
+				</templateattributestructure>
+				
+				<attributes>
+					<attribute>
+						<name>Object Type</name>
+						<value>SymmetricKey</value>
+					</attribute>
+				</attributes>
+			</batch>
+		</batches>
+		
+		<ttlvrequest>42007801000001204200770100000038420069010000002042006A0200000004000000010000000042006B0200000004000000000000000042000D0200000004000000010000000042000F01000000D842005C0500000004000000010000000042007901000000C04200570500000004000000020000000042009101000000A8420008010000003042000A070000001743727970746F6772617068696320416C676F726974686D0042000B05000000040000000300000000420008010000003042000A070000001443727970746F67726170686963204C656E6774680000000042000B02000000040000008000000000420008010000003042000A070000001843727970746F67726170686963205573616765204D61736B42000B02000000040000000C00000000</ttlvrequest>
+		<ttlvresponse>42007B01000000C042007A0100000048420069010000002042006A0200000004000000010000000042006B020000000400000000000000004200920900000008000000004AFBE7C242000D0200000004000000010000000042000F010000006842005C0500000004000000010000000042007F0500000004000000000000000042007C010000004042005705000000040000000200000000420094070000002466633838333364652D373064322D346563652D623036332D66656465336133633539666500000000</ttlvresponse>
+	</usecase>
+</usecases>
+

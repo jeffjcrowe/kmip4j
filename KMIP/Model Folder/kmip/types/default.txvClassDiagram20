@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhhdx1gpwmii8qf3">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPInterval">
+			<property name="bounds" value="-65,16,201,121"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="collapsedCompartments" value="Property20"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPInterval:KMIPType">
+				<property name="sourceAnchor" value="20,21"/>
+				<property name="targetAnchor" value="240,-80"/>
+				<property name="bendpoints" value="20,-80"/>
+				<property name="smooth_bendpoints" value="20,-80"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPStructure">
+			<property name="bounds" value="754,-305,199,123"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPStructure:KMIPType">
+				<property name="sourceAnchor" value="759,-229"/>
+				<property name="targetAnchor" value="447,-140"/>
+				<property name="bendpoints" value="640,-229,640,-140"/>
+				<property name="smooth_bendpoints" value="640,-229,640,-140"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+			<reference referencedUin="jdt:l_ast:src:kmip.types.KMIPStructure:value">
+				<property name="sourceAnchor" value="759,-200"/>
+				<property name="targetAnchor" value="447,-100"/>
+				<property name="bendpoints" value="660,-200,660,-100"/>
+				<property name="smooth_bendpoints" value="660,-200,660,-100"/>
+				<property name="location_set_by_user" value="true"/>
+				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:kmip.types.KMIPStructure:value">
+					<property name="bounds" value="457,-122,21,19"/>
+				</reference>
+				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:kmip.types.KMIPStructure:value">
+					<property name="bounds" value="739,-222,10,19"/>
+				</reference>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPLongInteger">
+			<property name="bounds" value="755,-145,198,121"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPLongInteger:KMIPType">
+				<property name="sourceAnchor" value="760,-80"/>
+				<property name="targetAnchor" value="447,-80"/>
+				<property name="bendpoints" value=""/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPBigInteger">
+			<property name="bounds" value="495,15,198,124"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPBigInteger:KMIPType">
+				<property name="sourceAnchor" value="599,20"/>
+				<property name="targetAnchor" value="447,-60"/>
+				<property name="bendpoints" value="599,-60"/>
+				<property name="smooth_bendpoints" value="599,-60"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPBoolean">
+			<property name="bounds" value="755,-565,201,159"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPBoolean:KMIPType">
+				<property name="sourceAnchor" value="880,-401"/>
+				<property name="targetAnchor" value="420,-160"/>
+				<property name="bendpoints" value="880,-320,420,-320"/>
+				<property name="smooth_bendpoints" value="880,-320,420,-320"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPTextString">
+			<property name="bounds" value="-225,-205,198,141"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPTextString:KMIPType">
+				<property name="sourceAnchor" value="-22,-129"/>
+				<property name="targetAnchor" value="240,-129"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPByteString">
+			<property name="bounds" value="301,-525,195,139"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPByteString:KMIPType">
+				<property name="sourceAnchor" value="383,-381"/>
+				<property name="targetAnchor" value="383,-160"/>
+				<property name="bendpoints" value=""/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPDateTime">
+			<property name="bounds" value="-205,-405,201,137"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPDateTime:KMIPType">
+				<property name="sourceAnchor" value="1,-300"/>
+				<property name="targetAnchor" value="260,-160"/>
+				<property name="bendpoints" value="260,-300"/>
+				<property name="smooth_bendpoints" value="260,-300"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPInteger">
+			<property name="bounds" value="233,15,198,124"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPInteger:KMIPType">
+				<property name="sourceAnchor" value="337,20"/>
+				<property name="targetAnchor" value="337,-39"/>
+				<property name="bendpoints" value=""/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPType">
+			<property name="bounds" value="235,-165,207,121"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.types.KMIPEnumeration">
+			<property name="bounds" value="-5,-545,237,121"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_gnt:src:kmip.types.KMIPEnumeration:KMIPType">
+				<property name="sourceAnchor" value="120,-419"/>
+				<property name="targetAnchor" value="320,-160"/>
+				<property name="bendpoints" value="120,-320,320,-320"/>
+				<property name="smooth_bendpoints" value="120,-320,320,-320"/>
+				<property name="location_set_by_user" value="true"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

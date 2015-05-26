@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="hrr4bhe73lzvprkjezb">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<reference referencedUin="jdt:e_class:src:kmip.process.decoder.KMIPDecoder">
+			<property name="bounds" value="115,55,562,351"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:kmip.decoder.KMIPDecoder:KMIPDecoderInterface">
+				<property name="sourceAnchor" value="682,129"/>
+				<property name="targetAnchor" value="740,129"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:kmip.process.decoder.KMIPDecoder:KMIPDecoderInterface">
+				<property name="sourceAnchor" value="682,129"/>
+				<property name="targetAnchor" value="740,129"/>
+			</reference>
+			<reference referencedUin="jdt:l_impl:src:kmip.decoder.KMIPDecoder:InterfaceKMIPDecoder">
+				<property name="sourceAnchor" value="682,129"/>
+				<property name="targetAnchor" value="740,129"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.decoder.KMIPDecoderInterface">
+			<property name="bounds" value="735,55,277,138"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

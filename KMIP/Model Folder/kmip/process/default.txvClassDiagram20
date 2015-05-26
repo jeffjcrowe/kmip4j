@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhhe73l522-aq1hvv">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="design:view:::hrr4bhe73lzvprkjezb">
+			<property name="bounds" value="5,5,211,131"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::eqibohe73m3wz74yi58">
+			<property name="bounds" value="5,145,211,151"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.EnumTags">
+			<property name="bounds" value="5,315,211,381"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.TTLVObject">
+			<property name="bounds" value="455,15,277,281"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:kmip.process.TTLVObject:children">
+				<property name="sourceAnchor" value="737,297"/>
+				<property name="targetAnchor" value="733,301"/>
+				<property name="bendpoints" value="766,297,766,330,733,330"/>
+				<property name="smooth_bendpoints" value="766,297,766,330,733,330"/>
+				<reference referencedUin="label:supplierCardinality:jdt:l_ast:src:kmip.process.TTLVObject:children">
+					<property name="bounds" value="736,302,21,19"/>
+				</reference>
+				<reference referencedUin="label:clientCardinality:jdt:l_ast:src:kmip.process.TTLVObject:children">
+					<property name="bounds" value="747,275,10,19"/>
+				</reference>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:kmip.process.EnumStaticValues">
+			<property name="bounds" value="455,335,196,181"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+		</reference>
+	</view>
+</nodeSet>

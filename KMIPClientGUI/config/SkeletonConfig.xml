@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SkeletonConfig.xml
+ * ******************************************************************
+ *     __ __ __  ___________ 
+ *    / //_//  |/  /  _/ __ \	  .''.
+ *   / ,<  / /|_/ // // /_/ /	 /.-. '____________
+ *  / /| |/ /  / // // ____/ 	 \'-' .__"__""__"-'
+ * /_/ |_/_/  /_/___/_/      	  ',,'
+ * 
+ * ******************************************************************
+ * Description:
+ * The SkeletonConfig file provides the needful flexibility for the 
+ * interchangeability of the server side. It contains a set of 
+ * init-parameters, where the components of the KMIP-System-
+ * Architecture are defined. Feel free to change the 
+ * parameter-values as needed. The parameter-name has to stay 
+ * unaltered.
+ *
+ * author     Stefanie Meile <stefaniemeile(at)gmail.com>
+ * author     Michael Guster <michael.guster(at)gmail.com>
+ * copyright  Copyright (c) 2013, Stefanie Meile, Michael Guster
+ * license    Simplified BSD License (see LICENSE.TXT)
+ * version    1.0, 2013/08/09
+ * since      File available since Release 1.0
+ */
+-->
+<skeleton-config>
+
+	<init-param>
+		<description>
+			Define the fully qualified name of your Adapter
+		</description>
+		<param-name>Adapter</param-name>
+		<param-value>ch.ntb.inf.klms.KLMSAdapter</param-value>
+	</init-param>
+	
+	<init-param>
+		<description>
+			Define the fully qualified name of your Key Lifecycle Management System
+		</description>
+		<param-name>KLMS</param-name>
+		<param-value>ch.ntb.inf.klms.KLMS</param-value>
+	</init-param>
+	
+	<init-param>
+		<description>
+			Define the fully qualified name of your Encoder
+		</description>
+		<param-name>Encoder</param-name>
+		<param-value>ch.ntb.inf.kmip.process.encoder.KMIPEncoder</param-value>
+	</init-param>
+
+	<init-param>
+		<description>
+			Define the fully qualified name of your Decoder
+		</description>
+		<param-name>Decoder</param-name>
+		<param-value>ch.ntb.inf.kmip.process.decoder.KMIPDecoder</param-value>
+	</init-param>
+	
+	<init-param>
+		<description>
+			Define the fully qualified name of your TransportLayer
+		</description>
+		<param-name>TransportLayer</param-name>
+		<param-value>ch.ntb.inf.kmip.skeleton.transport.KMIPSkeletonTransportLayer</param-value>
+	</init-param>
+	
+	<init-param>
+		<description>
+			Define the Port of this Server
+		</description>
+		<param-name>Port</param-name>
+		<param-value>5555</param-value>
+	</init-param>
+	
+	<init-param>
+		<param-name>log4jLocation</param-name>
+		<param-value>logging/config/log4j-1.2.17.xml</param-value>
+  	</init-param>
+
+	
+</skeleton-config>
