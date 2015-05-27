@@ -18,7 +18,7 @@ package ch.ntb.inf.kmip.stub.transport;
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -106,8 +106,7 @@ public class KMIPStubTransportLayerHTTPSLocalHost implements KMIPStubTransportLa
             String responseString = executePost(url, parameter, factory);
             return KMIPUtils.convertHexStringToArrayList(responseString);
         } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+			throw new RuntimeException("Exception sending request to " + url, e);
         }
     }
  
@@ -153,8 +152,7 @@ public class KMIPStubTransportLayerHTTPSLocalHost implements KMIPStubTransportLa
 	
 			return response.toString();
 		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
+			throw new RuntimeException(e);
 		} finally {
 			if (httpsConnection != null) {
 				httpsConnection.disconnect();

@@ -15,7 +15,7 @@ package ch.ntb.inf.kmip.utils;
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -36,6 +36,9 @@ public class KMIPUtils {
 	 * @return Byte ArrayList of the input String 
 	 */
 	public static ArrayList<Byte> convertHexStringToArrayList(String s) {
+		if (s == null) {
+			return null;
+		}
 		ArrayList<Byte> al = new ArrayList<Byte>();
 	    for (int i = 0; i < s.length()-1; i += 2) {
 	        al.add((byte) ((Character.digit(s.charAt(i), 16) << 4) + Character.digit(s.charAt(i+1), 16)));
@@ -48,6 +51,9 @@ public class KMIPUtils {
 	 * @return HEX-formated String
 	 */
 	public static String convertArrayListToHexString(ArrayList<Byte> al){
+		if (al == null) {
+			return null;
+		}
 		StringBuffer buf = new StringBuffer();	
 		for (Byte b : al) {
 			buf.append(String.format("%02X", b));

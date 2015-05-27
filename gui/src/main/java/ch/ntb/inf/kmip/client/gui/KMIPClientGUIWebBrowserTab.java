@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -63,14 +63,14 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
 	private int pageIndex = 0;
 	 
 	private String[] urls = new String[]{
-			"http://de.wikipedia.org/wiki/Key_Management_Interoperability_Protocol",
 			"http://en.wikipedia.org/wiki/Key_Management_Interoperability_Protocol",
+			"http://de.wikipedia.org/wiki/Key_Management_Interoperability_Protocol",
 			"http://docs.oasis-open.org/kmip/spec/v1.0/os/kmip-spec-1.0-os.html",
 			"http://cryptsoft.com/kmip/parse/"
 	};
 	private String[] urlDescriptions = new String[]{
-			"German KMIP Wiki",
 			"English KMIP Wiki",
+			"German KMIP Wiki",
 			"KMIP-Specification 1.0",
 			"KMIP Packet Parser"
 	};
@@ -153,7 +153,7 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
 	}
 	
 	protected ImageIcon createImageIcon(String path, String description) {
-		java.net.URL imgURL = getClass().getResource(path);
+		java.net.URL imgURL = ClassLoader.getSystemClassLoader().getResource(path);
 		if (imgURL != null) {
 			ImageIcon i = new ImageIcon(imgURL, description);
 			i.setImage(i.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));;

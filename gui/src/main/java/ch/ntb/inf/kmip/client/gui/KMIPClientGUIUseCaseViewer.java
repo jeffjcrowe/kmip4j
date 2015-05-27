@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -54,7 +54,7 @@ public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener
 	private static final Logger logger = Logger.getLogger(KMIPClientGUIUseCaseViewer.class);
 	
 	private KMIPClientGUI gui;
-	private KMIPContainer responseFromServer;
+	private String responseFromServer;
 	
 	private int actualUC;
 	private boolean processAllSelected = false;
@@ -186,11 +186,17 @@ public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener
 		
 		// get KMIPContainer from XML-Node-UseCase
 		KMIPContainer container = gui.ucxml.getKMIPContainer();
-		
-		responseFromServer = gui.getKmipStub().processRequest(container,expectedTTLVRequest,expectedTTLVResponse);
-		logger.info("Decoded Response from Server:");
-		logger.debug("\n-----------------------------\n"+responseFromServer+"\n-----------------------------");
-		gui.statusBar.setStatus(KMIPClientGUIStatusBar.Done);
+
+		try {
+			KMIPContainer resp = gui.getKmipStub().processRequest(container,expectedTTLVRequest,expectedTTLVResponse);
+			responseFromServer = resp.toString();
+			logger.info("Decoded Response from Server:");
+			logger.debug("\n-----------------------------\n"+responseFromServer+"\n-----------------------------");
+			gui.statusBar.setStatus(KMIPClientGUIStatusBar.Done);
+		} catch (Exception e) {
+			logger.warn("Request to server failed", e);
+			responseFromServer = "Request failed! " + e.getMessage();
+		}
 		
 		writeToResponseArea();
 		return compareStrings();
@@ -204,8 +210,8 @@ public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener
 	
 	private void writeToResponseArea(){
 		gui.responseArea.appendTextSendArea("<h3 style=\"color:blue;\">KMIP Request Sent with Following Parameters:</h3> \n"+sendParameters);
-		gui.responseArea.appendTextReceiveArea("Response from Server: \n--------------------\n"+responseFromServer.toString());
-		gui.ucc.updateComboBoxes(responseFromServer.toString());
+		gui.responseArea.appendTextReceiveArea("Response from Server: \n--------------------\n"+responseFromServer);
+		gui.ucc.updateComboBoxes(responseFromServer);
 	}
 	
 	private boolean compareStrings(){

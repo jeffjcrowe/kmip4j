@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -22,26 +22,18 @@
 
 package ch.ntb.inf.kmip.client.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
-import java.net.URL;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-
+import ch.ntb.inf.kmip.stub.KMIPStub;
+import ch.ntb.inf.kmip.stub.KMIPStubInterface;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import ch.ntb.inf.kmip.stub.KMIPStub;
-import ch.ntb.inf.kmip.stub.KMIPStubInterface;
+import javax.swing.*;
+import javax.swing.UIManager.LookAndFeelInfo;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 
 public class KMIPClientGUI extends JFrame{
@@ -66,14 +58,20 @@ public class KMIPClientGUI extends JFrame{
 	public KMIPClientGUIResponseArea responseArea;
 	public KMIPClientGUIStatusBar statusBar;
 	
-	
+
+	private KMIPStub createStub() {
+		try {
+			File configFile = new File(ClassLoader.getSystemClassLoader().getResource("StubConfig.xml").toURI());
+			return new KMIPStub(configFile);
+		} catch (URISyntaxException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	public KMIPClientGUI(){
-		
-		this.kmipStub = new KMIPStub();
-		
 		// load UseCases from XML
 		this.ucxml = new KMIPClientGUIxml(this);
-		
+		this.kmipStub = createStub();
 		setWindow();
 	}
 	
@@ -99,6 +97,7 @@ public class KMIPClientGUI extends JFrame{
 		setSplitPane();
 		setStatusBar();
 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// pack Frame
 		this.pack();	
 		// set the location of the window to center of the screen  (has to be after pack)
@@ -156,7 +155,7 @@ public class KMIPClientGUI extends JFrame{
 	}
 	
 	private void setProgramIcon() {
-		URL imageURL = getClass().getResource("img/kmipIconRound.PNG");
+		URL imageURL = ClassLoader.getSystemClassLoader().getResource("img/kmipIconRound.PNG");
 		Image image = Toolkit.getDefaultToolkit().getImage(imageURL);
 		this.setIconImage(image);
 	}
@@ -195,7 +194,7 @@ public class KMIPClientGUI extends JFrame{
 	
 	public void reset(){
 		logger.info("Reset GUI...");
-		this.kmipStub = new KMIPStub();
+		this.kmipStub = createStub();
 		this.ucxml = new KMIPClientGUIxml(this);
 		ucc.reset();
 		ucv.showSelectedUseCase();

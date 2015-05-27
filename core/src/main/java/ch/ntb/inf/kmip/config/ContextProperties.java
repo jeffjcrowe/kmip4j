@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -26,6 +26,7 @@
 package ch.ntb.inf.kmip.config;
 
 import java.io.File;
+import java.net.URISyntaxException;
 import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -41,20 +42,25 @@ public class ContextProperties extends Properties {
 	private static final long serialVersionUID = 5523640676789403887L;
 
 	public ContextProperties(String xmlPath, String name) {
-		
+		this(new File(xmlPath + name));
+	}
+
+	public ContextProperties(File fXmlFile) {
+		if (!fXmlFile.isFile()) {
+			throw new RuntimeException("Missing required config file " + fXmlFile.getPath());
+		}
 		try {
-			File fXmlFile = new File(xmlPath + name);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder;
 			dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
 			doc.getDocumentElement().normalize();
-			
+
 			getInitParameters(doc);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	} 
+	}
 	
 	public void getInitParameters(Document doc){
 		NodeList config = doc.getElementsByTagName("init-param");

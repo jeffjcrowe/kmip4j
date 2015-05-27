@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -22,6 +22,7 @@
 package ch.ntb.inf.kmip.client.gui;
 
 import java.io.File;
+import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -68,7 +69,7 @@ public class KMIPClientGUIxml{
 	public KMIPClientGUIxml(KMIPClientGUI gui) {
 		this.gui = gui;
 		try {
-			fXmlFile = new File("src/ch/ntb/inf/kmip/client/gui/xml/UseCases.xml");
+			fXmlFile = new File(ClassLoader.getSystemClassLoader().getResource("xml/UseCases.xml").toURI());
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

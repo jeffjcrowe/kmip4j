@@ -17,7 +17,7 @@
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -128,8 +128,7 @@ public class UCStringCompare {
 		comparisonResultRequest = true;
 		comparisonResultResponse = true;
 		
-		String responseString = KMIPUtils.convertArrayListToHexString(response);		
-		
+		String responseString = KMIPUtils.convertArrayListToHexString(response);
 		if(!checkLength(responseString, expected)){
 			comparisonResultResponse = false;
 			logger.warn("Response TTLV-Strings are NOT the same!");

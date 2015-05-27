@@ -82,11 +82,10 @@
 	
 	<init-param>
 		<description>
-			Define the fully qualified path name of your Keystore
-			NTB: D:\\keystore\\keystore.jks
+			Name of your Keystore file
 		</description>
 		<param-name>KeyStoreLocation</param-name>
-		<param-value>D:\\keystore\\keystore.jks</param-value>
+		<param-value>target/keystore/keystore.jks</param-value>
 	</init-param>
 	
 	

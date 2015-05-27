@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -59,7 +59,7 @@ public class KMIPClientGUISignal extends JPanel {
 	}
 	
 	protected ImageIcon createImageIcon(String path, String description) {
-		java.net.URL imgURL = getClass().getResource(path);
+		java.net.URL imgURL = ClassLoader.getSystemClassLoader().getResource(path);
 		if (imgURL != null) {
 			ImageIcon i = new ImageIcon(imgURL, description);
 			i.setImage(i.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));;
