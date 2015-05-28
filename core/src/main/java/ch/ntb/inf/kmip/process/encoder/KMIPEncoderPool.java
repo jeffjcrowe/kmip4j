@@ -19,7 +19,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -34,7 +34,7 @@ import java.util.Hashtable;
 
 public class KMIPEncoderPool {
 
-	private Hashtable<KMIPEncoderInterface, Boolean> encoders = new Hashtable<KMIPEncoderInterface, Boolean>();
+	private Hashtable<KMIPEncoderInterface, Boolean> encoders = new Hashtable<>();
 	private String encoderPath;
 	private String defaultPath;
 	
@@ -50,8 +50,8 @@ public class KMIPEncoderPool {
 	public synchronized KMIPEncoderInterface getEncoder() throws KMIPEncoderPoolOverflowException {
 		Enumeration<KMIPEncoderInterface> e = encoders.keys();
 		while (e.hasMoreElements()) {
-			KMIPEncoderInterface encoder = (KMIPEncoderInterface) e.nextElement();
-			Boolean b = (Boolean) encoders.get(encoder);
+			KMIPEncoderInterface encoder = e.nextElement();
+			Boolean b = encoders.get(encoder);
 			if (b.equals(Boolean.FALSE)) {
 				encoders.put(encoder, Boolean.TRUE);
 				return encoder;
@@ -59,7 +59,7 @@ public class KMIPEncoderPool {
 		}
 		
 		if(numberOfcreatedEncoders < maxEncoders){
-			KMIPEncoderInterface encoder = null;		
+			KMIPEncoderInterface encoder;
 			try{
 				if(encoderPath != null){
 					encoder = (KMIPEncoderInterface) Class.forName(encoderPath).newInstance();

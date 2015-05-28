@@ -13,7 +13,7 @@ package ch.ntb.inf.klms.db;
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -163,7 +163,7 @@ public class KLMSDatabase implements KLMSDatabaseInterface{
 		em.getTransaction().begin();
 		
 		ManagedObject object = getObjectByUID(uniqueIdentifier, em);
-		ArrayList<String> attributeNames = new ArrayList<String>();
+		ArrayList<String> attributeNames = new ArrayList<>();
 		for(Attribute a : object.getAttributes()){
 			attributeNames.add(a.getAttributeName());
 		}
@@ -223,7 +223,7 @@ public class KLMSDatabase implements KLMSDatabaseInterface{
 		em.getTransaction().begin();
 
 		List<ManagedObject> objects = loadAllObjects(em, locateAttributes);
-		ArrayList<Attribute> uids = new ArrayList<Attribute>();
+		ArrayList<Attribute> uids = new ArrayList<>();
 
 		for(ManagedObject o : objects){
 			
@@ -362,7 +362,7 @@ public class KLMSDatabase implements KLMSDatabaseInterface{
 	
 	private ArrayList<Attribute> selectAttributes(ManagedObject managedObject, HashMap<String, String> parameters) {
 		ArrayList<Attribute> attributes = managedObject.getAttributes();
-		ArrayList<Attribute> requestedAttributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> requestedAttributes = new ArrayList<>();
 		for(Attribute a : attributes){
 			if(parameters.containsKey(a.getAttributeName())){
 				requestedAttributes.add(a);
@@ -466,7 +466,7 @@ public class KLMSDatabase implements KLMSDatabaseInterface{
 	}
 
 	public Hashtable<String, String> getNumberOfObjects() {
-		Hashtable<String, String> objects = new Hashtable<String, String>();
+		Hashtable<String, String> objects = new Hashtable<>();
 		
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();

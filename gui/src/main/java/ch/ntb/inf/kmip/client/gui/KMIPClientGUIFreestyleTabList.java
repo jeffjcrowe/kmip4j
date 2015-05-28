@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -259,7 +259,7 @@ public class KMIPClientGUIFreestyleTabList extends JPanel implements ActionListe
 
 
 	public ArrayList<Attribute> getList() {
-		ArrayList<Attribute> al = new ArrayList<Attribute>();
+		ArrayList<Attribute> al = new ArrayList<>();
 		Attribute a;
 		for(int i = 0; i < tableTail; i++){
 			a = createAttributeInstance(listData[i][0]);

@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -53,7 +53,7 @@ public class KLMSAdapterUtils {
 ///////////////////////////////////////////////////////////////////////////////////////// create HashMap
 	
 	public static HashMap<String, String> createRequestParameters(ArrayList<Attribute> attributes, ArrayList<TemplateAttributeStructure> templateAttributeStructures, ManagedObject managedObject, Credential credential){
-		HashMap<String, String> requestParameters = new HashMap<String, String>();
+		HashMap<String, String> requestParameters = new HashMap<>();
 		
 		addTemplateAttributeStructures(templateAttributeStructures, attributes, requestParameters);
 		addManagedObject(managedObject, attributes, requestParameters);
@@ -70,19 +70,15 @@ public class KLMSAdapterUtils {
 	}
 	
 	private static void addTemplateAttributeStructures(ArrayList<TemplateAttributeStructure> templateAttributeStructures, ArrayList<Attribute> attributes, HashMap<String, String> requestParameters) {
-		if(templateAttributeStructures != null){	
-			Iterator<TemplateAttributeStructure> itTas = templateAttributeStructures.iterator();
-			while(itTas.hasNext()){
-				TemplateAttributeStructure actualTas = itTas.next();
-				if(actualTas instanceof CommonTemplateAttribute){			
+		if(templateAttributeStructures != null){
+			for (TemplateAttributeStructure actualTas : templateAttributeStructures) {
+				if (actualTas instanceof CommonTemplateAttribute) {
 					addTemplateAttributesByStructureName(actualTas, requestParameters, "Common");
-				}
-				else if(actualTas instanceof PrivateKeyTemplateAttribute){				
+				} else if (actualTas instanceof PrivateKeyTemplateAttribute) {
 					addTemplateAttributesByStructureName(actualTas, requestParameters, "PrivateKey");
-				}
-				else if(actualTas instanceof PublicKeyTemplateAttribute){	
+				} else if (actualTas instanceof PublicKeyTemplateAttribute) {
 					addTemplateAttributesByStructureName(actualTas, requestParameters, "PublicKey");
-				} else{
+				} else {
 					// TemplateAttribute
 					attributes.addAll(actualTas.getAttributes());
 					attributes.addAll(actualTas.getNames());
@@ -222,14 +218,14 @@ public class KLMSAdapterUtils {
 	}
 	
 	private static void addValueStructure(String attributeName, KMIPAttributeValue[] values, int count, HashMap<String, String> requestParameters) {
-		for(int i = 0; i < values.length; i++){
-			createAttributeValueEntry(values[i], count, requestParameters);
+		for (KMIPAttributeValue value : values) {
+			createAttributeValueEntry(value, count, requestParameters);
 		}
 	}
 	
 	private static void addValueStructure(String attributeName, KMIPAttributeValue[] values, int count, HashMap<String, String> requestParameters, String templateAttributeType) {
-		for(int i = 0; i < values.length; i++){
-			createAttributeValueEntry(values[i], count, requestParameters, templateAttributeType);
+		for (KMIPAttributeValue value : values) {
+			createAttributeValueEntry(value, count, requestParameters, templateAttributeType);
 		}
 	}
 	
@@ -283,7 +279,7 @@ public class KLMSAdapterUtils {
 	
 	
 	private static ArrayList<Attribute> getAttributesFromHashMap(HashMap<String, String> parameters){
-		ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> attributes = new ArrayList<>();
 		int counter = 0;
 
 		while(!parameters.isEmpty()){
@@ -336,7 +332,7 @@ public class KLMSAdapterUtils {
 
 	
 	public static void addCertainAttributeToBatch(HashMap<String, String> parameters, KMIPBatch batch,  String attributeName){
-		Attribute attribute = null;
+		Attribute attribute;
 		
 		try {
 			attribute = createAttribute(getAttributeClass(attributeName), parameters, 1);
@@ -349,11 +345,11 @@ public class KLMSAdapterUtils {
 	
 	private static void createComplexValue(Attribute a, HashMap<String, String> parameters, int i) {
 		KMIPAttributeValue[] values = a.getValues();
-	
-		for(int j = 0; j < values.length; j++){
-			String valueName = values[j].getName() + "value" + i;
-			if(parameters.containsKey(valueName)){
-				a.setValue(parameters.get(valueName), values[j].getName());
+
+		for (KMIPAttributeValue value : values) {
+			String valueName = value.getName() + "value" + i;
+			if (parameters.containsKey(valueName)) {
+				a.setValue(parameters.get(valueName), value.getName());
 				parameters.remove(valueName);
 			}
 		}	
@@ -391,7 +387,7 @@ public class KLMSAdapterUtils {
 
 			ArrayList<Attribute> attributes = getAttributesFromHashMap(parameters);
 			
-			ArrayList<Attribute> keyValueAttributes = new ArrayList<Attribute>();
+			ArrayList<Attribute> keyValueAttributes = new ArrayList<>();
 			keyValueAttributes.addAll(attributes);
 			
 			for(Attribute a : attributes){

@@ -18,7 +18,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -99,8 +99,8 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public KMIPBatch(){
-		attributes = new ArrayList<Attribute>();
-		templateAttributeStructures = new ArrayList<TemplateAttributeStructure>();
+		attributes = new ArrayList<>();
+		templateAttributeStructures = new ArrayList<>();
 	}
 
 
@@ -141,7 +141,7 @@ public class KMIPBatch {
 	 */
 	public void addKMIPType(KMIPType kmipType) {
 		if(this.kmipTypes == null){
-			this.kmipTypes = new ArrayList<KMIPType>();
+			this.kmipTypes = new ArrayList<>();
 		}
 		this.kmipTypes.add(kmipType);
 	}
@@ -220,6 +220,18 @@ public class KMIPBatch {
 	 */
 	public ArrayList<Attribute> getAttributes() {
 		return this.attributes;
+	}
+
+	/**
+	 * Returns the attribute matching the given name (or null if not found)
+	 */
+	public Attribute getAttribute(String name) {
+		for(Attribute attrib : attributes) {
+			if (attrib.getAttributeName().equalsIgnoreCase(name)) {
+				return attrib;
+			}
+		}
+		return null;
 	}
 		
 	/**
@@ -423,9 +435,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasKMIPTypes(){
-		if(this.kmipTypes != null)
-			return true;
-		return false;
+		return this.kmipTypes != null;
 	}
 	
 	/**
@@ -437,9 +447,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasManagedObject(){
-		if(this.managedObject != null)
-			return true;
-		return false;
+		return this.managedObject != null;
 	}
 	
 	/**
@@ -451,9 +459,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasUniqueBatchItemID(){
-		if(this.uniqueBatchItemID != null)
-			return true;
-		return false;
+		return this.uniqueBatchItemID != null;
 	}
 	
 	/**
@@ -465,9 +471,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasMessageExtension(){
-		if(this.messageExtension != null)
-			return true;
-		return false;
+		return this.messageExtension != null;
 	}
 	
 	/**
@@ -479,9 +483,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasResultReason(){
-		if(this.resultReason != null)
-			return true;
-		return false;
+		return this.resultReason != null;
 	}
 	
 	/**
@@ -493,9 +495,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasResultStatus(){
-		if(this.resultStatus != null)
-			return true;
-		return false;
+		return this.resultStatus != null;
 	}
 	
 	/**
@@ -507,9 +507,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasResultMessage(){
-		if(this.resultMessage != null)
-			return true;
-		return false;
+		return this.resultMessage != null;
 	}
 	
 	/**
@@ -521,9 +519,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasAsynchronousCorrelationValue(){
-		if(this.asynchronousCorrelationValue != null)
-			return true;
-		return false;
+		return this.asynchronousCorrelationValue != null;
 	}
 	
 	/**
@@ -554,10 +550,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasOperation() {
-		if(this.operation != null){
-			return true;
-		}
-		return false;
+		return this.operation != null;
 	}
 	
 	/**
@@ -569,10 +562,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasDerivationParameters() {
-		if(this.derivationParameters != null){
-			return true;
-		}
-		return false;
+		return this.derivationParameters != null;
 	}
 	
 	/**
@@ -584,10 +574,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasKeyWrappingSpecification() {
-		if(this.keyWrappingSpecification != null){
-			return true;
-		}
-		return false;
+		return this.keyWrappingSpecification != null;
 	}
 	
 	/**
@@ -599,10 +586,7 @@ public class KMIPBatch {
 	 * </ul>
 	 */
 	public boolean hasTemplateAttributeStructures() {
-		if(this.templateAttributeStructures.size() > 0){
-			return true;
-		}
-		return false;
+		return this.templateAttributeStructures.size() > 0;
 	}
 	
 	

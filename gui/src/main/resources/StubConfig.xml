@@ -48,12 +48,13 @@
 	<init-param>
 		<description>
 			Define the fully qualified name of your TransportLayer
+            TCP: 				ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayer
 			HTTP:				ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTP
 			HTTPS LocalHost: 	ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPSLocalHost
 			HTTPS WWW: 			ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPS
 		</description>
 		<param-name>TransportLayer</param-name>
-		<param-value>ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayerHTTPSLocalHost</param-value>
+		<param-value>ch.ntb.inf.kmip.stub.transport.KMIPStubTransportLayer</param-value>
 	</init-param>
 
 	
@@ -65,7 +66,7 @@
 			KMIPStubTransportLayerHTTPS:	https://localhost:8443/KMIPWebAppServer/KMIPServlet
 		</description>
 		<param-name>TargetHostname</param-name>
-		<param-value>https://localhost:8443/KMIPWebAppServer/KMIPServlet</param-value>
+		<param-value>localhost:5696</param-value>
 	</init-param>
 
 	

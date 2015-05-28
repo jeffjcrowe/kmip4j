@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -49,7 +49,7 @@ public interface KMIPStubInterface {
 	 * @param c :      	the <code>KMIPContainer</code> to be encoded and sent. 
 	 * @return			<code>KMIPContainer</code> with the response objects.
 	 */
-	public KMIPContainer processRequest(KMIPContainer c);
+	KMIPContainer processRequest(KMIPContainer c);
 
 	/**
 	 * Processes a KMIP-Request-Message stored in a <code>KMIPContainer</code> and returns a corresponding KMIP-Response-Message.
@@ -61,5 +61,5 @@ public interface KMIPStubInterface {
 	 * @param expectedTTLVResponse :      	the <code>String</code> to be compared to the decoded response message. 
 	 * @return			<code>KMIPContainer</code> with the response objects.
 	 */
-	public KMIPContainer processRequest(KMIPContainer c, String expectedTTLVRequest, String expectedTTLVResponse);
+	KMIPContainer processRequest(KMIPContainer c, String expectedTTLVRequest, String expectedTTLVResponse);
 }

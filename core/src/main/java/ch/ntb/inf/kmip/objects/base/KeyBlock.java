@@ -22,7 +22,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -132,7 +132,7 @@ public class KeyBlock extends BaseObject {
 	}
 	
 	public ArrayList<Attribute> getAttributes() {
-		ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> attributes = new ArrayList<>();
 		if(hasCryptographicAlgorithm()){
 			attributes.add(cryptographicAlgorithm);
 		}
@@ -145,39 +145,27 @@ public class KeyBlock extends BaseObject {
 	
 	// has Methods
 	public boolean hasCryptographicLength(){
-		if(this.cryptographicLength != null)
-			return true;
-		return false;
+		return this.cryptographicLength != null;
 	}
 	
 	public boolean hasCryptographicAlgorithm(){
-		if(this.cryptographicAlgorithm != null)
-			return true;
-		return false;
+		return this.cryptographicAlgorithm != null;
 	}
 	
 	public boolean hasKeyValue(){
-		if(this.keyValue != null)
-			return true;
-		return false;
+		return this.keyValue != null;
 	}
 	
 	public boolean hasKeyWrappingData(){
-		if(this.keyWrappingData != null)
-			return true;
-		return false;
+		return this.keyWrappingData != null;
 	}
 	
 	public boolean hasKeyCompressionType(){
-		if(this.keyCompressionType != null)
-			return true;
-		return false;
+		return this.keyCompressionType != null;
 	}
 	
 	public boolean hasKeyFormatType(){
-		if(this.keyFormatType != null)
-			return true;
-		return false;
+		return this.keyFormatType != null;
 	}
 		
 	

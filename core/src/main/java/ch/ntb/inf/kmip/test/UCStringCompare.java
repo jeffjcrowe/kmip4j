@@ -227,10 +227,7 @@ public class UCStringCompare {
 	
 	
 	private static boolean checkLength(String requestString, String expected){
-		if(requestString.length() != expected.length()){
-			return false;
-		}
-		return true;
+		return requestString.length() == expected.length();
 	}
 	
 	

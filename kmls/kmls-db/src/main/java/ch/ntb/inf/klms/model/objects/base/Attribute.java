@@ -14,7 +14,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -69,6 +69,7 @@ public abstract class Attribute {
 	/**  Type of the attribute. */
 	private String type;
 	
+	@SuppressWarnings("deprecation")
 	@ManyToMany ( cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@IndexColumn(name = "index")
 	protected List<KLMSAttributeValue> values;
@@ -129,7 +130,7 @@ public abstract class Attribute {
 
 	/** @return the values */
 	public KLMSAttributeValue[] getValues() {
-		return (KLMSAttributeValue[]) values.toArray(new KLMSAttributeValue[values.size()]);
+		return values.toArray(new KLMSAttributeValue[values.size()]);
 	}
 
 	/** @return gets encoded Name of the Attribute */
@@ -146,10 +147,10 @@ public abstract class Attribute {
 			values.get(0).setValue(value);
 		}else{
 			String valName = name.replaceAll("\\s","").toLowerCase();
-			for(int i = 0; i < values.size(); i++){
-				String attributeName = values.get(i).getName().replaceAll("\\s","").toLowerCase();
-				if(attributeName.equals(valName)){
-					values.get(i).setValue(value);
+			for (KLMSAttributeValue value1 : values) {
+				String attributeName = value1.getName().replaceAll("\\s", "").toLowerCase();
+				if (attributeName.equals(valName)) {
+					value1.setValue(value);
 					break;
 				}
 			}
@@ -164,11 +165,11 @@ public abstract class Attribute {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(attributeName + " [");
-		for(int i = 0; i < values.size(); i++){
-			if(values.get(i).getName() != null){
-				sb.append(values.get(i).getName() + ":" + values.get(i).getValueString());
-			} else{
-				sb.append(values.get(i).getValueString());
+		for (KLMSAttributeValue value : values) {
+			if (value.getName() != null) {
+				sb.append(value.getName() + ":" + value.getValueString());
+			} else {
+				sb.append(value.getValueString());
 			}
 		}
 		sb.append("]");
@@ -184,11 +185,10 @@ public abstract class Attribute {
 	 */
 	public  ArrayList<Byte> toArrayList(String val){
 		int length = val.getBytes().length;
-		byte[] b = new byte[length];
-		b = val.getBytes();
-		ArrayList<Byte> value = new ArrayList<Byte>();
-		for(int i=0; i<b.length; i++){
-			value.add(b[i]);
+		byte[] b = val.getBytes();
+		ArrayList<Byte> value = new ArrayList<>();
+		for (byte aB : b) {
+			value.add(aB);
 		}
 		setLength(value.size());
 		
@@ -205,7 +205,7 @@ public abstract class Attribute {
 	 * @return Byte ArrayList of the String with padding Bytes
 	 */
 	public ArrayList<Byte> pad(int n){
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			al.add((byte) 0x00);
 		}

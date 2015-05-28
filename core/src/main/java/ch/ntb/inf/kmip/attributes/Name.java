@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -31,7 +31,6 @@ import ch.ntb.inf.kmip.kmipenum.EnumNameType;
 import ch.ntb.inf.kmip.kmipenum.EnumTag;
 import ch.ntb.inf.kmip.kmipenum.EnumType;
 import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.types.KMIPEnumeration;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 
 public class Name extends Attribute {
@@ -43,7 +42,7 @@ public class Name extends Attribute {
 		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.TextString), new EnumTag(EnumTag.NameValue), new KMIPTextString());
 		this.values[0].setName("Name Value");
 		
-		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.NameType), (KMIPEnumeration)new EnumNameType());
+		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.NameType), new EnumNameType());
 		this.values[1].setName("Name Type");
 	}
 		

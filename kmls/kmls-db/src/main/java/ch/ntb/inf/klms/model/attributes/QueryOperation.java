@@ -13,7 +13,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -39,7 +39,7 @@ public class QueryOperation extends Attribute {
 	
 	public QueryOperation(){
 		super("Query Operation", "Query Operation", "Enumeration");
-		this.values = new ArrayList<KLMSAttributeValue>();
+		this.values = new ArrayList<>();
 		this.values.add(new KLMSAttributeValue("Enumeration", "Query Operation"));
 		this.values.get(0).setName(this.getAttributeName());
 	}

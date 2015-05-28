@@ -97,7 +97,7 @@ public class KMIPClientGUI extends JFrame{
 		setSplitPane();
 		setStatusBar();
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		// pack Frame
 		this.pack();	
 		// set the location of the window to center of the screen  (has to be after pack)

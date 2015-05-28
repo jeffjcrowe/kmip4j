@@ -18,7 +18,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -98,7 +98,7 @@ public class KMIPBoolean extends KMIPType {
 	}
 	
 	public ArrayList<Byte> toArrayList(KMIPAttributeValue attributeValue) {
-		ArrayList<Byte> value = new ArrayList<Byte>();
+		ArrayList<Byte> value = new ArrayList<>();
 		value.add((byte) 0x00);
 		value.add((byte) 0x00);
 		value.add((byte) 0x00);
@@ -106,7 +106,7 @@ public class KMIPBoolean extends KMIPType {
 		value.add((byte) 0x00);
 		value.add((byte) 0x00);
 		value.add((byte) 0x00);
-		value.add((byte) getByteValue());
+		value.add(getByteValue());
 		attributeValue.setLength(defaultLength);
 		return value;
 	}

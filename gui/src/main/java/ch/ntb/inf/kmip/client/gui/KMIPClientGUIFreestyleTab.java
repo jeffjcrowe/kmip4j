@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -333,8 +333,8 @@ public class KMIPClientGUIFreestyleTab extends JPanel implements ActionListener{
 	}
 	
 	private JComboBox<String> makeComboBox(String[] s, int index){
-		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(s);
-		JComboBox<String> box = new JComboBox<String>(model);
+		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(s);
+		JComboBox<String> box = new JComboBox<>(model);
 		box.setEditable(false);
 		box.setSelectedIndex(index);
 		box.setPrototypeDisplayValue("123456478910");

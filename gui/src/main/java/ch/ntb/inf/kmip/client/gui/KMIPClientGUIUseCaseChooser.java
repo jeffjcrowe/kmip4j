@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -64,7 +64,7 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	private static HashMap<String, Integer> useCaseUIDs;
 		
 	static{
-		useCaseUIDs = new HashMap<String, Integer>();
+		useCaseUIDs = new HashMap<>();
 		useCaseUIDs.put("Use Case 3.1.2 (4) - Destroy Template", 1);
 		useCaseUIDs.put("Use Case 3.1.4 (10) - Client A: Destroy Template", 1);
 		useCaseUIDs.put("Use Case 8.1 (2) - Locate (Private Key)", 2);
@@ -136,14 +136,14 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	}
 	
 	private void setListModel(){
-		listModel = new DefaultListModel<String>();   
+		listModel = new DefaultListModel<>();
 		for(String s : useCases){
 	        listModel.addElement(s);         
 		} 
 	}
 	
 	private void createUCList(){         
-		chooseUC = new JList<String>(listModel);         
+		chooseUC = new JList<>(listModel);
 		chooseUC.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);         
 		chooseUC.setSelectedIndex(0); 
 		gui.ucv.showSelectedUseCase();
@@ -177,8 +177,8 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	private JPanel setUIDSelectionBox(){
 		JPanel uidSelection = new JPanel(new BorderLayout());
 		uidSelection.setBackground(Color.white);
-		chooseUIDModel = new DefaultComboBoxModel<String>(new String[]{"Default"});
-		chooseUID = new JComboBox<String>(chooseUIDModel);
+		chooseUIDModel = new DefaultComboBoxModel<>(new String[]{"Default"});
+		chooseUID = new JComboBox<>(chooseUIDModel);
 		chooseUID.setSelectedIndex(0);
 		chooseUID.setEditable(true);
 		chooseUID.addActionListener(this);
@@ -196,8 +196,8 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	private JPanel setAsynchronousCorrelationValueSelectionBox(){
 		JPanel acvSelection = new JPanel(new BorderLayout());
 		acvSelection.setBackground(Color.white);
-		chooseAsynchronousCorrelationValueModel = new DefaultComboBoxModel<String>(new String[]{"Default"});
-		chooseAsynchronousCorrelationValue = new JComboBox<String>(chooseAsynchronousCorrelationValueModel);
+		chooseAsynchronousCorrelationValueModel = new DefaultComboBoxModel<>(new String[]{"Default"});
+		chooseAsynchronousCorrelationValue = new JComboBox<>(chooseAsynchronousCorrelationValueModel);
 		chooseAsynchronousCorrelationValue.setSelectedIndex(0);
 		chooseAsynchronousCorrelationValue.setEditable(true);
 		chooseAsynchronousCorrelationValue.addActionListener(this);
@@ -214,7 +214,7 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	
 	
 	public void valueChanged(ListSelectionEvent e) {
-		if (e.getValueIsAdjusting() == false) {
+		if (!e.getValueIsAdjusting()) {
 			int useCaseId = chooseUC.getSelectedIndex();
 			gui.ucxml.setSelectedUseCase(useCaseId);
 			gui.ucv.showSelectedUseCase();
@@ -276,16 +276,16 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	}
 	
 	public void updateUIDComboBox(String response) {
-		String uid = "overwrite";
-		if(response.indexOf("Unique Identifier:") != (-1)){
+		String uid;
+		if(response.contains("Unique Identifier:")){
 			uid = response.substring(response.indexOf("Unique Identifier:")+18, response.indexOf("]",response.indexOf("Unique Identifier:")+18));
 			addUIDtoComboBox(uid);
 		} 
 	}
 	
 	public void updateAsynchronousCorrelationValueComboBox(String response) {
-		String acv = "overwrite";
-		if(response.indexOf("AsynchronousCorrelationValue") != (-1)){
+		String acv;
+		if(response.contains("AsynchronousCorrelationValue")){
 			acv = response.substring(response.indexOf("AsynchronousCorrelationValue =") + 31, response.indexOf("AsynchronousCorrelationValue =") + 47);
 			addAsynchronousCorrelationValuetoComboBox(acv);
 		} 
@@ -305,10 +305,10 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 				if(currentUC.equals("Use Case 8.2 (2) - Add Attribute")){
 					gui.ucxml.setHasTwoUIDs(true);
 				}
-				return (String) chooseUIDModel.getElementAt(useCaseUIDs.get(currentUC));
+				return chooseUIDModel.getElementAt(useCaseUIDs.get(currentUC));
 			}
 		}
-		return (String) chooseUIDModel.getElementAt(chooseUID.getSelectedIndex());
+		return chooseUIDModel.getElementAt(chooseUID.getSelectedIndex());
 	}
 	
 	public String getSecondUID(){
@@ -316,7 +316,7 @@ public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelection
 	}
 	
 	private String getUCName(){
-		String ucWithWhiteSpace = (String) chooseUC.getSelectedValue();
+		String ucWithWhiteSpace = chooseUC.getSelectedValue();
 		int begin = ucWithWhiteSpace.indexOf("Use Case");
 		String ucWithWhiteSpaceAtTheEnd = ucWithWhiteSpace.substring(begin);
 		int startWhiteSpace = ucWithWhiteSpaceAtTheEnd.indexOf("\n");

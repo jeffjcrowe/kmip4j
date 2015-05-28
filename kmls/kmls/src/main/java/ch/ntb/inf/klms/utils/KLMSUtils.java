@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -93,8 +93,8 @@ public class KLMSUtils {
 	}
 	
 	private static void addValueStructure(String attributeName, KLMSAttributeValue[] values, int count, HashMap<String, String> requestParameters) {
-		for(int i = 0; i < values.length; i++){
-			createAttributeValueEntry(values[i], count, requestParameters);
+		for (KLMSAttributeValue value : values) {
+			createAttributeValueEntry(value, count, requestParameters);
 		}
 	}
 	
@@ -177,7 +177,7 @@ public class KLMSUtils {
 	
 	
 	public static ArrayList<Attribute> createAttributesFromHashMap(HashMap<String, String> parameters){
-		ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> attributes = new ArrayList<>();
 		
 		int counter = 0;
 		while(!parameters.isEmpty()){
@@ -205,10 +205,10 @@ public class KLMSUtils {
 	
 	
 	public static HashMap<String, ArrayList<Attribute>> createAttributeListsForKeyPairFromHashMap(HashMap<String, String> parameters){
-		HashMap<String, ArrayList<Attribute>> attributeLists = new HashMap<String, ArrayList<Attribute>>();
-		ArrayList<Attribute> common = new ArrayList<Attribute>();
-		ArrayList<Attribute> privateKey = new ArrayList<Attribute>();
-		ArrayList<Attribute> publicKey = new ArrayList<Attribute>();
+		HashMap<String, ArrayList<Attribute>> attributeLists = new HashMap<>();
+		ArrayList<Attribute> common = new ArrayList<>();
+		ArrayList<Attribute> privateKey = new ArrayList<>();
+		ArrayList<Attribute> publicKey = new ArrayList<>();
 		attributeLists.put("Common", common);
 		attributeLists.put("PrivateKey", privateKey);
 		attributeLists.put("PublicKey", publicKey);
@@ -242,14 +242,16 @@ public class KLMSUtils {
 				int count = Integer.parseInt(e.getValue());
 				
 				for (int i = 1; i <= count; i++) {
-					if(type.equals("Common")){
-						common.add(createAttribute(attributeClass, parameters, i, type));
-					}
-					else if(type.equals("PrivateKey")){
-						privateKey.add(createAttribute(attributeClass, parameters, i, type));
-					}
-					else if(type.equals("PublicKey")){
-						publicKey.add(createAttribute(attributeClass, parameters, i, type));
+					switch (type) {
+						case "Common":
+							common.add(createAttribute(attributeClass, parameters, i, type));
+							break;
+						case "PrivateKey":
+							privateKey.add(createAttribute(attributeClass, parameters, i, type));
+							break;
+						case "PublicKey":
+							publicKey.add(createAttribute(attributeClass, parameters, i, type));
+							break;
 					}
 				}
 				parameters.remove(e.getKey());
@@ -300,11 +302,11 @@ public class KLMSUtils {
 	
 	private static void createComplexValue(Attribute a, HashMap<String, String> parameters, int i) {
 		KLMSAttributeValue[] values = a.getValues();
-	
-		for(int j = 0; j < values.length; j++){
-			if(parameters.containsKey((values[j].getName() + "value" + i))){
-				a.setValue(parameters.get(values[j].getName() + "value" + i), values[j].getName());
-				parameters.remove(values[j].getName() + "value" + i);
+
+		for (KLMSAttributeValue value : values) {
+			if (parameters.containsKey((value.getName() + "value" + i))) {
+				a.setValue(parameters.get(value.getName() + "value" + i), value.getName());
+				parameters.remove(value.getName() + "value" + i);
 			}
 
 		}	
@@ -312,11 +314,11 @@ public class KLMSUtils {
 
 	private static void createComplexValue(Attribute a, HashMap<String, String> parameters, int i, String type) {
 		KLMSAttributeValue[] values = a.getValues();
-	
-		for(int j = 0; j < values.length; j++){
-			if(parameters.containsKey((type + values[j].getName() + "value" + i))){
-				a.setValue(parameters.get(type + values[j].getName() + "value" + i), values[j].getName());
-				parameters.remove(type + values[j].getName() + "value" + i);
+
+		for (KLMSAttributeValue value : values) {
+			if (parameters.containsKey((type + value.getName() + "value" + i))) {
+				a.setValue(parameters.get(type + value.getName() + "value" + i), value.getName());
+				parameters.remove(type + value.getName() + "value" + i);
 			}
 
 		}	

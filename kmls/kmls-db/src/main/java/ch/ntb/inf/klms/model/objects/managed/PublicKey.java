@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -93,7 +93,7 @@ public class PublicKey extends CryptographicObject{
 	public PublicKey(HashMap<String, String> parameters) throws NoSuchAlgorithmException {
 		super(parameters, "PublicKey");
 		this.objectType = new ObjectType(Integer.toString(EnumObjectType.PublicKey));
-		this.digests = new HashSet<Digest>();
+		this.digests = new HashSet<>();
 		Digest digest = new Digest();
 		this.digests.add(digest);
 		this.keyBlock = new KeyBlock(parameters, digest);
@@ -102,7 +102,7 @@ public class PublicKey extends CryptographicObject{
 	public PublicKey(ArrayList<Attribute> attributes, CryptographicAlgorithm ca, CryptographicLength len, byte[] keyMaterial) throws NoSuchAlgorithmException {
 		super(attributes, "PublicKey");
 		this.objectType = new ObjectType(Integer.toString(EnumObjectType.PublicKey));
-		this.digests = new HashSet<Digest>();
+		this.digests = new HashSet<>();
 		Digest digest = new Digest();
 		this.digests.add(digest);
 		this.keyBlock = new KeyBlock(ca, len, keyMaterial, digest);
@@ -141,7 +141,7 @@ public class PublicKey extends CryptographicObject{
 		
 		if(attrib instanceof CryptographicParameters){
 			if(cryptographicParameters == null){
-				cryptographicParameters = new HashSet<CryptographicParameters>();
+				cryptographicParameters = new HashSet<>();
 			}
 			cryptographicParameters.add((CryptographicParameters) attrib);
 			return true;
@@ -164,7 +164,7 @@ public class PublicKey extends CryptographicObject{
 	}
 
 	public ArrayList<Attribute> check(ArrayList<Attribute> attributes){
-		ArrayList<Attribute> returnAttributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> returnAttributes = new ArrayList<>();
 		for(Attribute a : attributes){
 			if(a instanceof UsageLimits){
 				if(((UsageLimits) a).getUsageLimitsCount() > this.usageLimits.getUsageLimitsCount()){
@@ -197,7 +197,7 @@ public class PublicKey extends CryptographicObject{
 	
 	public void setLink(String uniqueIdentifierValue) {
 		if(this.links == null){
-			links = new HashSet<Link>();
+			links = new HashSet<>();
 		}
 		Link l = new Link();
 		l.setValue(uniqueIdentifierValue, "Linked Object Identifier");

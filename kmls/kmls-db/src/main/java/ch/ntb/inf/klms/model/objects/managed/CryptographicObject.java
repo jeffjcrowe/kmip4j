@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -134,7 +134,7 @@ public abstract class CryptographicObject extends ManagedObject {
 		} 
 		
 		if(parameters.containsKey("Link")){
-			this.links = new HashSet<Link>();
+			this.links = new HashSet<>();
 			Link a = new Link();
 			a.setValue(parameters.get("Link Type" + "value"+ "1"), "Link Type");
 			a.setValue(parameters.get("Linked Object Identifier" + "value"+ "1"), "Linked Object Identifier");
@@ -214,14 +214,14 @@ public abstract class CryptographicObject extends ManagedObject {
 		
 		if(attrib instanceof Link){
 			if(links == null){
-				links = new HashSet<Link>();
+				links = new HashSet<>();
 			}
 			links.add((Link) attrib);
 			return true;
 		} 
 		else if(attrib instanceof Digest){
 			if(digests == null){
-				digests = new HashSet<Digest>();
+				digests = new HashSet<>();
 			}
 			digests.add((Digest) attrib);
 			return true;
@@ -285,7 +285,7 @@ public abstract class CryptographicObject extends ManagedObject {
 	}
 	
 	public ArrayList<Attribute> obtainLease() throws KLMSPermissionDeniedException{
-		ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> attributes = new ArrayList<>();
 		int currentState = Integer.parseInt(this.state.getValues()[0].getValueString());
 		if(currentState == EnumState.Active){
 			attributes.add(this.leaseTime);
@@ -306,10 +306,7 @@ public abstract class CryptographicObject extends ManagedObject {
 
 	public boolean isDestroyed() {
 		int state = Integer.parseInt(this.state.getValues()[0].getValueString());
-		if(state == EnumState.Destroyed || state == EnumState.DestroyedCompromised){
-			return true;
-		}
-		return false;
+		return state == EnumState.Destroyed || state == EnumState.DestroyedCompromised;
 	}
 
 }

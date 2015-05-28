@@ -15,7 +15,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -81,7 +81,7 @@ class KLMSServerHandler implements Runnable {
 	private byte[] readBytes(InputStream is) throws IOException{
     	byte[] resultBuff = new byte[0];
         byte[] buff = new byte[1024];
-        int k = -1;
+        int k;
         while((k = is.read(buff, 0, buff.length)) > -1) {
             byte[] tbuff = new byte[resultBuff.length + k]; // temp buffer size = bytes already read + bytes last read
             System.arraycopy(resultBuff, 0, tbuff, 0, resultBuff.length); // copy previous bytes
@@ -94,7 +94,7 @@ class KLMSServerHandler implements Runnable {
 	
 
 	private ArrayList<Byte> toArrayList(byte[] resultBuff) {
-        ArrayList<Byte> request = new ArrayList<Byte>();
+        ArrayList<Byte> request = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         for(byte b:resultBuff){
         	sb.append(String.format("%02X", b));

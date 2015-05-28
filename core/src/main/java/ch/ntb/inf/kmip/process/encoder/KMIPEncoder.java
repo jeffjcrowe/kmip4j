@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -95,13 +95,13 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 	private final int INTERVAL_LENGTH = 4;
 
 	public ArrayList<Byte> encodeRequest(KMIPContainer container) {
-		 ArrayList<Byte> al = new ArrayList<Byte>();
+		 ArrayList<Byte> al = new ArrayList<>();
 		 encodeRequestMessage(container, al);
 		 return al;
 	}
 		
 	public ArrayList<Byte> encodeResponse(KMIPContainer container) {
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		encodeResponseMessage(container, al);
 		return al;
 	}
@@ -309,6 +309,7 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 	}
 
 	
+	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	private void encodeRequestPayload(KMIPBatch batch, ArrayList<Byte> al) {
 		encodeTagAndType(EnumTag.RequestPayload, EnumType.Structure, al);
 		int pos = al.size();
@@ -360,10 +361,9 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 				encodeAttribute(it.next(), al);
 			}
 		}
-		
-		Iterator<TemplateAttributeStructure> itTas = batch.getTemplateAttributeStructures().iterator();
-		while(itTas.hasNext()){
-			encodeTemplateAttributeStructure(itTas.next(), al);
+
+		for (TemplateAttributeStructure templateAttributeStructure : batch.getTemplateAttributeStructures()) {
+			encodeTemplateAttributeStructure(templateAttributeStructure, al);
 		}
 		
 		if(batch.hasManagedObject()){
@@ -388,6 +388,7 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 	}
 
 	
+	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	private void encodeResponsePayload(KMIPBatch batch, ArrayList<Byte> al) {
 		encodeTagAndType(EnumTag.ResponsePayload, EnumType.Structure, al);
 		int pos = al.size();
@@ -427,9 +428,8 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 			}
 		}
 
-		Iterator<TemplateAttributeStructure> itTas = batch.getTemplateAttributeStructures().iterator();
-		while(itTas.hasNext()){
-			it = itTas.next().getAttributes().iterator();
+		for (TemplateAttributeStructure templateAttributeStructure : batch.getTemplateAttributeStructures()) {
+			it = templateAttributeStructure.getAttributes().iterator();
 			while (it.hasNext()) {
 				encodeAttributeStructure(it.next(), al);
 			}
@@ -452,18 +452,17 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 
 
 
+	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	private void encodeTemplateAttributeStructure(TemplateAttributeStructure tas, ArrayList<Byte> al) {
 		encodeTagAndType(tas.getTag().getValue(), EnumType.Structure, al);
 		int pos = al.size();
-		
-		Iterator<Name> itName = tas.getNames().iterator();
-		while(itName.hasNext()){
-			encodeAttribute(itName.next(), al);
+
+		for (Name name : tas.getNames()) {
+			encodeAttribute(name, al);
 		}
-		
-		Iterator<Attribute> it = tas.getAttributes().iterator();
-		while (it.hasNext()) {
-			encodeAttributeStructure(it.next(), al);
+
+		for (Attribute attribute : tas.getAttributes()) {
+			encodeAttributeStructure(attribute, al);
 		}
 		createLength(al.size() - pos, pos, al);
 	}
@@ -489,10 +488,10 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 		int pos = al.size(); 
 		if(attribute.getAttributeType() == EnumType.Structure){
 			KMIPAttributeValue[] values = attribute.getValues();
-			for(int i = 0; i < values.length; i++){
-				if(!(values[i].getValueString().equals("-1"))){
-					if(! (values[i].getType() == EnumType.LongInteger && values[i].getValueString().equals("0"))){ // Case Usage Limits without Usage Limit Count
-						encodeAttributeValueElement(al, values[i]);
+			for (KMIPAttributeValue value : values) {
+				if (!(value.getValueString().equals("-1"))) {
+					if (!(value.getType() == EnumType.LongInteger && value.getValueString().equals("0"))) { // Case Usage Limits without Usage Limit Count
+						encodeAttributeValueElement(al, value);
 					}
 				}
 			}
@@ -535,13 +534,13 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 		}
 	}
 	
+	@SuppressWarnings("WhileLoopReplaceableByForEach")
 	private void encodeTemplate(Template template, ArrayList<Byte> al) {
 		encodeTagAndType(EnumTag.Template, EnumType.Structure, al);
 		int pos = al.size();
 
-		Iterator<Attribute> it = template.getAttributes().iterator();
-		while (it.hasNext()) {
-			encodeAttributeStructure(it.next(), al);
+		for (Attribute attribute : template.getAttributes()) {
+			encodeAttributeStructure(attribute, al);
 		}
 		createLength(al.size() - pos, pos, al);
 	}
@@ -861,12 +860,12 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 		int pos = al.size();	
 		if(attribute.getAttributeType() == EnumType.Structure){
 			KMIPAttributeValue[] values = attribute.getValues();
-			for(int i = 0; i < values.length; i++){
-				if(values[i].getValueString() != null && values[i].getValueString().length() > 0){
-					encodeTagAndType(values[i].getTag(), values[i].getType(), al);
+			for (KMIPAttributeValue value : values) {
+				if (value.getValueString() != null && value.getValueString().length() > 0) {
+					encodeTagAndType(value.getTag(), value.getType(), al);
 					int position = al.size();
-					al.addAll(values[i].getValue());
-					createLength(values[i].getLength(), position, al);
+					al.addAll(value.getValue());
+					createLength(value.getLength(), position, al);
 				}
 
 			}

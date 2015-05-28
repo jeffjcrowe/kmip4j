@@ -15,7 +15,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -189,93 +189,63 @@ public class TransparentKeyStructure extends BaseObject{
 	// has Methods
 	
 	public boolean hasP(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 
 	public boolean hasQ(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasG(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasX(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasY(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasJ(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasModulus(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasPrivateExponent(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasPublicExponent(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasPrimeExponentP(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasPrimeExponentQ(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasCrtCoefficient(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasRecommendedCurve(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasD(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 	
 	public boolean hasQString(){
-		if(this.p != null)
-			return true;
-		return false;
+		return this.p != null;
 	}
 
 	

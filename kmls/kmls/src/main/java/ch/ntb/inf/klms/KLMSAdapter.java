@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -69,7 +69,7 @@ public class KLMSAdapter implements KLMSAdapterInterface{
 	public KLMSAdapter(KLMSInterface klms) {
 		super();
 		this.klms = klms;
-		asynchronousPuffer = new HashMap<String, KMIPBatch>(); 
+		asynchronousPuffer = new HashMap<>();
 	}
 
 	public void setKLMS(String klmsPath, String defaultPath) throws InstantiationException, IllegalAccessException, ClassNotFoundException{
@@ -95,7 +95,7 @@ public class KLMSAdapter implements KLMSAdapterInterface{
 
 
 	public KMIPBatch doProcess(KMIPBatch requestBatch, Credential credential, boolean asynchronousIndicator) {
-		KMIPBatch responseBatch = null;
+		KMIPBatch responseBatch;
 		KMIPBatch asynchronousResponseBatch = null;
 		
 		if(requestBatch.hasAsynchronousCorrelationValueAttribute()){
@@ -294,7 +294,7 @@ public class KLMSAdapter implements KLMSAdapterInterface{
 		EnumObjectType objectType = getAndRemoveObjectType(attributes);
 		
 		HashMap<String, String> requestParameters  = KLMSAdapterUtils.createRequestParameters(attributes, templateAttributeStructures, null, credential);
-		HashMap<String, String> responseParameters = null;
+		HashMap<String, String> responseParameters;
  		
 		int ot = objectType.getValue();
 		if(ot == EnumObjectType.SymmetricKey){

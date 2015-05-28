@@ -23,7 +23,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -118,10 +118,10 @@ public abstract class Attribute extends BaseObject {
 			values[0].setValue(value);
 		}else{
 			String valName = name.replaceAll("\\s","").toLowerCase();
-			for(int i = 0; i < values.length; i++){
-				String attributeName = values[i].getName().replaceAll("\\s","").toLowerCase();
-				if(attributeName.equals(valName)){
-					values[i].setValue(value);
+			for (KMIPAttributeValue value1 : values) {
+				String attributeName = value1.getName().replaceAll("\\s", "").toLowerCase();
+				if (attributeName.equals(valName)) {
+					value1.setValue(value);
 					break;
 				}
 			}
@@ -135,10 +135,7 @@ public abstract class Attribute extends BaseObject {
 	
 	
 	public boolean hasAttributeIndex(){
-		if(this.attributeIndex != null){
-			return true;
-		}
-		return false;
+		return this.attributeIndex != null;
 	}
 	
 	
@@ -150,11 +147,10 @@ public abstract class Attribute extends BaseObject {
 	 */
 	public  ArrayList<Byte> toArrayList(String val){
 		int length = val.getBytes().length;
-		byte[] b = new byte[length];
-		b = val.getBytes();
-		ArrayList<Byte> value = new ArrayList<Byte>();
-		for(int i=0; i<b.length; i++){
-			value.add(b[i]);
+		byte[] b = val.getBytes();
+		ArrayList<Byte> value = new ArrayList<>();
+		for (byte aB : b) {
+			value.add(aB);
 		}
 		setLength(value.size());
 		
@@ -171,7 +167,7 @@ public abstract class Attribute extends BaseObject {
 	 * @return Byte ArrayList of the String with padding Bytes
 	 */
 	public ArrayList<Byte> pad(int n){
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			al.add((byte) 0x00);
 		}
@@ -186,11 +182,11 @@ public abstract class Attribute extends BaseObject {
 			sb.append("\nAttributeIndex = " + attributeIndex.getValueString());
 		}
 		sb.append(" [");
-		for(int i = 0; i < values.length; i++){
-			if(values[i].getName() != null){
-				sb.append(values[i].getName() + ":" + values[i].getValueString());
-			} else{
-				sb.append(values[i].getValueString() + ", ");
+		for (KMIPAttributeValue value : values) {
+			if (value.getName() != null) {
+				sb.append(value.getName() + ":" + value.getValueString());
+			} else {
+				sb.append(value.getValueString() + ", ");
 			}
 		}
 		sb.append("]");

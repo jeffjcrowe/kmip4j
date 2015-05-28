@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -65,9 +65,9 @@ public class KMIPTextString extends KMIPType{
 			int length = this.value.getBytes().length;
 			byte[] b = new byte[length];
 			b = this.value.getBytes();
-			ArrayList<Byte> value = new ArrayList<Byte>();
-			for (int i = 0; i < b.length; i++) {
-				value.add(b[i]);
+			ArrayList<Byte> value = new ArrayList<>();
+			for (byte aB : b) {
+				value.add(aB);
 			}
 			attributeValue.setLength(value.size());
 
@@ -84,9 +84,9 @@ public class KMIPTextString extends KMIPType{
 		int length = this.value.getBytes().length;
 		byte[] b = new byte[length];
 		b = this.value.getBytes();
-		ArrayList<Byte> value = new ArrayList<Byte>();
-		for (int i = 0; i < b.length; i++) {
-			value.add(b[i]);
+		ArrayList<Byte> value = new ArrayList<>();
+		for (byte aB : b) {
+			value.add(aB);
 		}
 		this.setLength(value.size());
 
@@ -98,7 +98,7 @@ public class KMIPTextString extends KMIPType{
 	}
 	
 	public ArrayList<Byte> pad(int n){
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			al.add((byte) 0x00);
 		}

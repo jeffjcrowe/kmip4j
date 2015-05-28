@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -45,14 +45,14 @@ public interface KMIPStubTransportLayerInterface {
 	 * @param al :     	the <code>ArrayList{@literal <}Byte{@literal >}</code> to be sent.
 	 * @return			<code>ArrayList{@literal <}Byte{@literal >}</code>: the response message.
 	 */
-	public ArrayList<Byte> send(ArrayList<Byte> al);
+	ArrayList<Byte> send(ArrayList<Byte> al);
 
 	/**
 	 * Sets the target host name to the defined value
 	 * 
 	 * @param value :     	the target host name defined as <code>String</code> to be set. 
 	 */
-	public void setTargetHostname(String value);
+	void setTargetHostname(String value);
 	
 	/**
 	 * Sets the keystore location of the used keystore (e.g.: D:\\keystore\\keystore.jks).
@@ -60,7 +60,7 @@ public interface KMIPStubTransportLayerInterface {
 	 * 
 	 * @param property :     the key store location defined as <code>String</code> to be set. 
 	 */
-	public void setKeyStoreLocation(String property);
+	void setKeyStoreLocation(String property);
 	
 	/**
 	 * Sets the keystore password of the used keystore.
@@ -68,6 +68,6 @@ public interface KMIPStubTransportLayerInterface {
 	 * 
 	 * @param property :     the key store password defined as <code>String</code> to be set.
 	 */
-	public void setKeyStorePW(String property);
+	void setKeyStorePW(String property);
 	
 }

@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -47,7 +47,7 @@ public class KMIPClientGUIAbout extends JFrame implements ActionListener{
 			"Successful Interoperability Test of Use Cases against IBM Server Implementation <br><br>" +
 			"Authors:<br>Michael Guster<br>Stefanie Meile<br><br>" +
 			"Developed in 2013 as a bachelor thesis at: <br>" +
-			"Interstaatliche Hochschule für Technik Buchs NTB <br><br>" +
+			"Interstaatliche Hochschule fï¿½r Technik Buchs NTB <br><br>" +
 //			"<a href=\"www.ntb.ch \" > NTB </a>" +
 			"Copyright (c) 2013, Stefanie Meile, Michael Guster" +
 			"</p></html>";
@@ -120,7 +120,7 @@ public class KMIPClientGUIAbout extends JFrame implements ActionListener{
 		java.net.URL imgURL = getClass().getResource(path);
 		if (imgURL != null) {
 			ImageIcon i = new ImageIcon(imgURL, description);
-			i.setImage(i.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));;
+			i.setImage(i.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 			return i;
 		} else {
 			return null;

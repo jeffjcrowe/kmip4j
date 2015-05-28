@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -108,7 +108,7 @@ public class SymmetricKey extends CryptographicObject {
 	public SymmetricKey(HashMap<String, String> parameters) throws NoSuchAlgorithmException {
 		super(parameters, "SymmetricKey");
 		this.objectType = new ObjectType(Integer.toString(EnumObjectType.SymmetricKey));
-		this.digests = new HashSet<Digest>();
+		this.digests = new HashSet<>();
 		Digest digest = new Digest();
 		this.digests.add(digest);
 		this.keyBlock = new KeyBlock(parameters, digest);
@@ -151,7 +151,7 @@ public class SymmetricKey extends CryptographicObject {
 		
 		if(attrib instanceof CryptographicParameters){
 			if(cryptographicParameters == null){
-				cryptographicParameters = new HashSet<CryptographicParameters>();
+				cryptographicParameters = new HashSet<>();
 			}
 			cryptographicParameters.add((CryptographicParameters) attrib);
 			return true;
@@ -178,7 +178,7 @@ public class SymmetricKey extends CryptographicObject {
 	}
 
 	public ArrayList<Attribute> check(ArrayList<Attribute> attributes){
-		ArrayList<Attribute> returnAttributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> returnAttributes = new ArrayList<>();
 		for(Attribute a : attributes){
 			if(a instanceof UsageLimits){
 				if(((UsageLimits) a).getUsageLimitsCount() > this.usageLimits.getUsageLimitsCount()){
@@ -312,7 +312,7 @@ public class SymmetricKey extends CryptographicObject {
 			lifeCycleDates[4].setValue(Long.toString(dt2), null);
 		}
 		
-		HashMap<String, Long> lifeCycleDateList = new HashMap<String, Long>();
+		HashMap<String, Long> lifeCycleDateList = new HashMap<>();
 		lifeCycleDateList.put("it2", it2);	// current date
 		lifeCycleDateList.put("at2", at2);	
 		lifeCycleDateList.put("dt2", dt2);	

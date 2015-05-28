@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -51,12 +51,12 @@ public class CredentialValue {
 	
 	
 	public void setUsername(String value) {
-		this.username = new String(value);
+		this.username = value;
 	}
 	
 
 	public void setPassword(String value) {
-		this.password = new String(value);
+		this.password = value;
 	}
 	
 	public String getUsername() {

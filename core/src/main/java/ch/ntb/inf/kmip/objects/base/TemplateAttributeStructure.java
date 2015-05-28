@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -40,8 +40,8 @@ public abstract class TemplateAttributeStructure extends BaseObject {
 	
 	public TemplateAttributeStructure(EnumTag tag) {
 		super(tag);
-		this.attributes = new ArrayList<Attribute>();
-		this.names = new ArrayList<Name>();
+		this.attributes = new ArrayList<>();
+		this.names = new ArrayList<>();
 	}
 	
 	public TemplateAttributeStructure(EnumTag tag, ArrayList<Attribute> attributes, ArrayList<Name> names) {
@@ -77,17 +77,11 @@ public abstract class TemplateAttributeStructure extends BaseObject {
 	
 	
 	public boolean hasAttributes(){
-		if(attributes.size() > 0){
-			return true;
-		}
-		return false;
+		return attributes.size() > 0;
 	}
 	
 	public boolean hasNames(){
-		if(names.size() > 0){
-			return true;
-		}
-		return false;
+		return names.size() > 0;
 	}
 	
 	

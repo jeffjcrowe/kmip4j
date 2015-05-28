@@ -29,7 +29,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -101,34 +101,22 @@ public class KeyWrappingData extends BaseObject {
 	
 	
 	public boolean hasEncryptionKeyInformation(){
-		if(this.encryptionKeyInformation != null){
-			return true;
-		}
-		return false;
+		return this.encryptionKeyInformation != null;
 	}
 	
 	
 	public boolean hasMACSignatureKeyInformation(){
-		if(this.macSignatureKeyInformation != null){
-			return true;
-		}
-		return false;
+		return this.macSignatureKeyInformation != null;
 	}
 	
 	
 	public boolean hasMACSignature(){
-		if(this.macSignature != null){
-			return true;
-		}
-		return false;
+		return this.macSignature != null;
 	}
 	
 	
 	public boolean hasIVCounterNonce(){
-		if(this.IVCounterNonce != null){
-			return true;
-		}
-		return false;
+		return this.IVCounterNonce != null;
 	}
 	
 	

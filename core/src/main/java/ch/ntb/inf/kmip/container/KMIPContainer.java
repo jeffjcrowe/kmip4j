@@ -19,7 +19,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -67,7 +67,7 @@ public class KMIPContainer {
 	 * the Batch-Count to zero. 
 	 */
 	public KMIPContainer(){
-		batches = new ArrayList<KMIPBatch>();
+		batches = new ArrayList<>();
 		batchCount = new KMIPInteger(0);
 	}
 	
@@ -105,16 +105,22 @@ public class KMIPContainer {
 	 * @param value :     	the option value as <code>String</code> (e.g.: "TRUE")
 	 */
 	public void setOption(String name, String value){
-		if(name.equals("MaximumResponseSize")){
-			this.maximumResponseSize = new KMIPInteger(value);
-		} else if(name.equals("AsynchronousIndicator")){
-			this.asynchronousIndicator = new KMIPBoolean(value);
-		} else if(name.equals("BatchErrorContinuationOption")){
-			this.batchErrorContinuationOption = new EnumBatchError(value);
-		} else if(name.equals("BatchOrderOption")){
-			this.batchOrderOption = new KMIPBoolean(value);
-		} else if(name.equals("TimeStamp")){
-			this.timeStamp = new KMIPDateTime(value);
+		switch (name) {
+			case "MaximumResponseSize":
+				this.maximumResponseSize = new KMIPInteger(value);
+				break;
+			case "AsynchronousIndicator":
+				this.asynchronousIndicator = new KMIPBoolean(value);
+				break;
+			case "BatchErrorContinuationOption":
+				this.batchErrorContinuationOption = new EnumBatchError(value);
+				break;
+			case "BatchOrderOption":
+				this.batchOrderOption = new KMIPBoolean(value);
+				break;
+			case "TimeStamp":
+				this.timeStamp = new KMIPDateTime(value);
+				break;
 		}
 	}
 	
@@ -296,9 +302,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasTimeStamp(){
-		if(this.timeStamp != null)
-			return true;
-		return false;
+		return this.timeStamp != null;
 	}
 	
 	/**
@@ -310,9 +314,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasMaximumResponseSize(){
-		if(this.maximumResponseSize != null)
-			return true;
-		return false;
+		return this.maximumResponseSize != null;
 	}
 	
 	/**
@@ -324,9 +326,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasAsynchronousIndicator(){
-		if(this.asynchronousIndicator != null)
-			return true;
-		return false;
+		return this.asynchronousIndicator != null;
 	}
 	
 	/**
@@ -338,9 +338,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasBatchErrorContinuationOption(){
-		if(this.batchErrorContinuationOption != null)
-			return true;
-		return false;
+		return this.batchErrorContinuationOption != null;
 	}
 	
 	/**
@@ -352,9 +350,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasBatchOrderOption(){
-		if(this.batchOrderOption != null)
-			return true;
-		return false;
+		return this.batchOrderOption != null;
 	}
 	
 	/**
@@ -366,9 +362,7 @@ public class KMIPContainer {
 	 * </ul>
 	 */
 	public boolean hasAuthentication(){
-		if(this.authentication != null)
-			return true;
-		return false;
+		return this.authentication != null;
 	}
 	
 	// toString Method

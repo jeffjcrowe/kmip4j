@@ -62,7 +62,7 @@ public class KMIPClientGUISignal extends JPanel {
 		java.net.URL imgURL = ClassLoader.getSystemClassLoader().getResource(path);
 		if (imgURL != null) {
 			ImageIcon i = new ImageIcon(imgURL, description);
-			i.setImage(i.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));;
+			i.setImage(i.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 			return i;
 		} else {
 			logger.error("Couldn't find file: " + path);

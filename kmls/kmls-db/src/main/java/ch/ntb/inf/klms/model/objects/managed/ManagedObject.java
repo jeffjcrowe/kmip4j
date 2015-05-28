@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -149,7 +149,7 @@ public abstract class ManagedObject {
 		
 		// optional
 		if(parameters.containsKey("Name")){
-			names = new HashSet<Name>();
+			names = new HashSet<>();
 			Name n = new Name();
 			n.setValue(parameters.get("Name Type" + "value"+ "1"), "Name Type");
 			n.setValue(parameters.get("Name Value" + "value"+ "1"), "Name Value");
@@ -164,7 +164,7 @@ public abstract class ManagedObject {
 			}
 		} 
 		if(parameters.containsKey("Application Specific Information")){
-			applicationSpecificInformation = new HashSet<ApplicationSpecificInformation>();
+			applicationSpecificInformation = new HashSet<>();
 			ApplicationSpecificInformation a = new ApplicationSpecificInformation();
 			a.setValue(parameters.get("Application Namespace" + "value"+ "1"), "Application Namespace");
 			a.setValue(parameters.get("Application Data" + "value"+ "1"), "Application Data");
@@ -179,7 +179,7 @@ public abstract class ManagedObject {
 			}
 		} 
 		if(parameters.containsKey("Object Group")){
-			objectGroups = new HashSet<ObjectGroup>();
+			objectGroups = new HashSet<>();
 			ObjectGroup a = new ObjectGroup();
 			a.setValue(parameters.get("Object Group" + "value" + "1"), "Object Group");
 			objectGroups.add(a); 
@@ -192,7 +192,7 @@ public abstract class ManagedObject {
 			}
 		} 
 		if(parameters.containsKey("x-Purpose")){
-			customAttributes = new HashSet<CustomAttribute>();
+			customAttributes = new HashSet<>();
 			CustomAttribute a = new XPurpose(parameters.get("x-Purpose"  + "value" + "1"));
 			customAttributes.add(a); 
 
@@ -225,7 +225,7 @@ public abstract class ManagedObject {
 		for(Attribute a : attributes){
 			if(a instanceof Name){
 				if(names == null){
-					names = new HashSet<Name>();
+					names = new HashSet<>();
 				}
 				this.names.add((Name) a);
 			}
@@ -256,10 +256,7 @@ public abstract class ManagedObject {
 	}
 	
 	public boolean hasArchiveDate(){
-		if(this.archiveDate != null){
-			return true;
-		}
-		return false;
+		return this.archiveDate != null;
 	}
 	
 	public void recover() {
@@ -267,7 +264,7 @@ public abstract class ManagedObject {
 	}
 
 	public ArrayList<Attribute> getAttributesForCreate(){
-		ArrayList<Attribute> attributes = new ArrayList<Attribute>();
+		ArrayList<Attribute> attributes = new ArrayList<>();
 		
 		if(customAttributes != null){
 			attributes.addAll(customAttributes);
@@ -314,28 +311,28 @@ public abstract class ManagedObject {
 	public boolean addAttribute(Attribute attrib) {
 		if(attrib instanceof Name){
 			if(names == null){
-				names = new HashSet<Name>();
+				names = new HashSet<>();
 			}
 			names.add((Name) attrib);
 			return true;
 		}
 		else if(attrib instanceof ApplicationSpecificInformation){
 			if(applicationSpecificInformation == null){
-				applicationSpecificInformation = new HashSet<ApplicationSpecificInformation>();
+				applicationSpecificInformation = new HashSet<>();
 			}
 			applicationSpecificInformation.add((ApplicationSpecificInformation) attrib);
 			return true;
 		}
 		else if(attrib instanceof ObjectGroup){
 			if(objectGroups == null){
-				objectGroups = new HashSet<ObjectGroup>();
+				objectGroups = new HashSet<>();
 			}
 			objectGroups.add((ObjectGroup) attrib);
 			return true;
 		}
 		else if(attrib instanceof CustomAttribute){
 			if(customAttributes == null){
-				customAttributes = new HashSet<CustomAttribute>();
+				customAttributes = new HashSet<>();
 			}
 			customAttributes.add((CustomAttribute) attrib);
 			return true;

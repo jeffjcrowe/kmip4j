@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -37,9 +37,9 @@ public class DefaultValues {
 	
 	public static final int LEASE_TIME = 0x10;
 	
-	public static final ArrayList<Attribute> KLMS_CAPABILITIES_OPERATIONS = new ArrayList<Attribute>();
+	public static final ArrayList<Attribute> KLMS_CAPABILITIES_OPERATIONS = new ArrayList<>();
 	
-	public static final ArrayList<Attribute> KLMS_CAPABILITIES_OBJECTS = new ArrayList<Attribute>();
+	public static final ArrayList<Attribute> KLMS_CAPABILITIES_OBJECTS = new ArrayList<>();
 	
 	static{
 		// supported Operations

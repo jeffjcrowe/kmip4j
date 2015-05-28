@@ -18,7 +18,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -114,7 +114,7 @@ public class KMIPSkeleton implements KMIPSkeletonInterface{
 	}
 	
 	private void setTransportLayer(ContextProperties props) throws ClassNotFoundException, SecurityException, NoSuchMethodException, IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException{
-		KMIPSkeletonTransportLayerInterface transportLayer = null;
+		KMIPSkeletonTransportLayerInterface transportLayer;
 		Class<?> transportLayerClass = getClass(props.getProperty("TransportLayer"), DEFAULT_LOCATION_TRANSPORTLAYER);
 		Constructor<?> transportLayerConstructor = transportLayerClass.getConstructor(this.getClass());
 		transportLayer = (KMIPSkeletonTransportLayerInterface) transportLayerConstructor.newInstance(this);
@@ -213,10 +213,10 @@ public class KMIPSkeleton implements KMIPSkeletonInterface{
 	
 	
 	private ArrayList<Byte> encodeResponse(KMIPContainer container) {
-		ArrayList<Byte> response = null;
+		ArrayList<Byte> response;
 		KMIPEncoderInterface encoder;
 		try {
-			encoder = (KMIPEncoderInterface) encoderPool.getEncoder();
+			encoder = encoderPool.getEncoder();
 			response = encoder.encodeResponse(container);	
 			encoderPool.returnEncoder(encoder);
 			return response;

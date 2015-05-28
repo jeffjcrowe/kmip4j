@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -52,8 +52,8 @@ public class KLMSAttributeValue {
 	
 
 	
-	public KLMSAttributeValue(){};
-	
+	public KLMSAttributeValue(){}
+
 	public KLMSAttributeValue(String type, String tag, String value, String name) {
 		this.type = type;
 		this.tag = tag;
@@ -129,10 +129,7 @@ public class KLMSAttributeValue {
 	}
 	
 	public boolean equals(KLMSAttributeValue other) {
-		if(this.value.equals(other.value)){
-			return true;
-		}
-		return false;
+		return this.value.equals(other.value);
 	}
 	
 }

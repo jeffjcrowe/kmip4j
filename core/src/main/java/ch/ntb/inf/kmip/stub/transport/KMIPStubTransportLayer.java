@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -38,7 +38,7 @@ public class KMIPStubTransportLayer implements KMIPStubTransportLayerInterface {
 	
 	private static final Logger logger = Logger.getLogger(KMIPStubTransportLayer.class);
 	
-	private int PORT = 5555;						// default values
+	private int PORT = 5696;						// default values
 	private String targetHostname = "localhost";	// default values
 
 	private KMIPClientHandler clientHandler;
@@ -61,7 +61,7 @@ public class KMIPStubTransportLayer implements KMIPStubTransportLayerInterface {
 		/* Process the call-Method from the clientHandler asynchronous with FutureTask
 		 * A Future represents the result of an asynchronous computation
 		 */
-		FutureTask<ArrayList<Byte>> ft = new FutureTask<ArrayList<Byte>>(clientHandler);
+		FutureTask<ArrayList<Byte>> ft = new FutureTask<>(clientHandler);
 		Thread tft = new Thread(ft);
 		tft.start();
  

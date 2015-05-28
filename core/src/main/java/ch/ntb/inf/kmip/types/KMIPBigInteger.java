@@ -21,7 +21,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -40,7 +40,7 @@ public class KMIPBigInteger extends KMIPType {
 	
 	private final int defaultLength = 0;	// Varies, Multiple of 8. Use length!
 	
-	private ArrayList<Byte> value = new ArrayList<Byte>();
+	private ArrayList<Byte> value = new ArrayList<>();
 	private int length;
 
 	public KMIPBigInteger(ArrayList<Byte> value) {
@@ -74,9 +74,9 @@ public class KMIPBigInteger extends KMIPType {
 	}
 
 	public ArrayList<Byte> toArrayList(KMIPAttributeValue attributeValue) {
-		ArrayList<Byte> returnValue = new ArrayList<Byte>();
-		for (int i = 0; i < value.size(); i++) {
-			returnValue.add(value.get(i));
+		ArrayList<Byte> returnValue = new ArrayList<>();
+		for (Byte aValue : value) {
+			returnValue.add(aValue);
 		}
 		this.setLength(returnValue.size());
 
@@ -93,7 +93,7 @@ public class KMIPBigInteger extends KMIPType {
 	}
 	
 	public ArrayList<Byte> pad(int n){
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			al.add((byte) 0x00);
 		}

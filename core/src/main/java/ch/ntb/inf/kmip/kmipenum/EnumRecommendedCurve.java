@@ -14,7 +14,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -51,7 +51,7 @@ public class EnumRecommendedCurve extends KMIPEnumeration{
 	public static final int B_571 = 0x0F;
 	
 	static{
-		values = new HashMap<String, Integer>();
+		values = new HashMap<>();
 		Field[] fields = EnumRecommendedCurve.class.getDeclaredFields();
 		for (Field f : fields) {
 		    if (Modifier.isStatic(f.getModifiers()) && Modifier.isFinal(f.getModifiers())){

@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -150,7 +150,7 @@ public class KMIPDecoder implements KMIPDecoderInterface{
 		decodeRequestHeader(al.subList(TTL_SIZE, TTL_SIZE + length), container);
 		
 		// Batch Items
-		boolean hasMultipleBatchItems = container.getBatchCount() > 1 ? true : false;
+		boolean hasMultipleBatchItems = container.getBatchCount() > 1;
 		int offset = subItemLength;
 		for(int i = 0; i < container.getBatchCount(); i++){
 			decodeRequestBatchItem(al.subList(TTL_SIZE + offset, TTL_SIZE + length), container.getBatch(i), hasMultipleBatchItems);
@@ -170,7 +170,7 @@ public class KMIPDecoder implements KMIPDecoderInterface{
 		decodeResponseHeader(al.subList(TTL_SIZE, TTL_SIZE + length), container);
 		
 		// Batch Items
-		boolean hasMultipleBatchItems = container.getBatchCount() > 1 ? true : false;
+		boolean hasMultipleBatchItems = container.getBatchCount() > 1;
 		int offset = subItemLength;
 		for(int i = 0; i < container.getBatchCount(); i++){
 			decodeResponseBatchItem(al.subList(TTL_SIZE + offset, TTL_SIZE + length ), container.getBatch(i), hasMultipleBatchItems);
@@ -1027,7 +1027,7 @@ public class KMIPDecoder implements KMIPDecoderInterface{
 	
 	private void decodeObjectType(List<Byte> al, KMIPBatch batch) throws KMIPUnexpectedTypeException, KMIPPaddingExpectedException{
 		checkType(EnumTag.ObjectType, EnumType.Enumeration, al);
-		batch.addAttribute(new ObjectType((KMIPEnumeration) new EnumObjectType(decodeKMIPEnumeration(al))));
+		batch.addAttribute(new ObjectType(new EnumObjectType(decodeKMIPEnumeration(al))));
 	}
 	
 	private void decodeRevocationReason(List<Byte> al, KMIPBatch batch) throws KMIPUnexpectedTagException, KMIPUnexpectedTypeException, KMIPPaddingExpectedException, UnsupportedEncodingException {

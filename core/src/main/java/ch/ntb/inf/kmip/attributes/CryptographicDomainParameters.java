@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -30,7 +30,6 @@ import ch.ntb.inf.kmip.kmipenum.EnumRecommendedCurve;
 import ch.ntb.inf.kmip.kmipenum.EnumTag;
 import ch.ntb.inf.kmip.kmipenum.EnumType;
 import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.types.KMIPEnumeration;
 import ch.ntb.inf.kmip.types.KMIPInteger;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 
@@ -43,7 +42,7 @@ public class CryptographicDomainParameters extends Attribute {
 		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.Integer), new EnumTag(EnumTag.Qlength), new KMIPInteger());
 		this.values[0].setName("Qlength");
 		
-		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.RecommendedCurve), (KMIPEnumeration)new EnumRecommendedCurve());
+		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.RecommendedCurve), new EnumRecommendedCurve());
 		this.values[1].setName("Recommended Curve");
 	}
 	

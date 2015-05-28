@@ -13,7 +13,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -36,7 +36,7 @@ public class ContactInformation extends Attribute {
 	
 	public ContactInformation(){
 		super("Contact Information", "ContactInformation", "TextString");
-		this.values = new ArrayList<KLMSAttributeValue>();
+		this.values = new ArrayList<>();
 		this.values.add(new KLMSAttributeValue("TextString", "ContactInformation"));
 		this.values.get(0).setName(this.getAttributeName());
 	}

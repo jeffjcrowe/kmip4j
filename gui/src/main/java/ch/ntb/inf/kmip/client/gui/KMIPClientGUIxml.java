@@ -22,7 +22,6 @@
 package ch.ntb.inf.kmip.client.gui;
 
 import java.io.File;
-import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -281,14 +280,19 @@ public class KMIPClientGUIxml{
 
 		Attribute a = createAttributeInstance(className);
 
-		if (className.equals("UniqueIdentifier")) {
-			addUniqueIdentifier(attribute, a);
-		} else if (className.equals("Link")) {
-			addLink(attribute, a);
-		} else if (className.equals("AsynchronousCorrelationValue")) {
-			addAsynchronousCorrelationValue(attribute, a);
-		} else {
-			addOtherAttribute(attribute, a);
+		switch (className) {
+			case "UniqueIdentifier":
+				addUniqueIdentifier(attribute, a);
+				break;
+			case "Link":
+				addLink(attribute, a);
+				break;
+			case "AsynchronousCorrelationValue":
+				addAsynchronousCorrelationValue(attribute, a);
+				break;
+			default:
+				addOtherAttribute(attribute, a);
+				break;
 		}
 		batch.addAttribute(a);
 	}
@@ -568,7 +572,7 @@ public class KMIPClientGUIxml{
 	}
 	
 	private String getTextFromNode(Node node){
-		return ((Element) node).getTextContent().replaceAll("\\s","");
+		return node.getTextContent().replaceAll("\\s","");
 	}
 	
 	private int parseInt(String value){

@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -39,7 +39,7 @@ public class EnumDerivationMethod extends KLMSEnumeration{
 	public static final int NIST800_108_DPI	= 0x07;
 	
 	static{
-		values = new HashMap<String, Integer>();
+		values = new HashMap<>();
 		Field[] fields = EnumDerivationMethod.class.getDeclaredFields();
 		for (Field f : fields) {
 		    if (Modifier.isStatic(f.getModifiers()) && Modifier.isFinal(f.getModifiers())){

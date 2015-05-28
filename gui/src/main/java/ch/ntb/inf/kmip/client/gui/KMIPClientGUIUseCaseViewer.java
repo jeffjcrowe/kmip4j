@@ -137,11 +137,11 @@ public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener
 	}
 	
 	private void setLabels(){
-		Hashtable<Integer, JLabel> labelTable = new Hashtable<Integer, JLabel>();
-		labelTable.put( new Integer( 0   ), new JLabel("0s") );
-		labelTable.put( new Integer( 2000 ), new JLabel("2s") );
-		labelTable.put( new Integer( 4000 ), new JLabel("4s") );
-		labelTable.put( new Integer( 6000 ), new JLabel("6s") );
+		Hashtable<Integer, JLabel> labelTable = new Hashtable<>();
+		labelTable.put(0, new JLabel("0s") );
+		labelTable.put(2000, new JLabel("2s") );
+		labelTable.put(4000, new JLabel("4s") );
+		labelTable.put(6000, new JLabel("6s") );
 		delaySlider.setLabelTable( labelTable );		
 		delaySlider.setPaintLabels(true);
 	}
@@ -263,7 +263,7 @@ public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener
 	public void stateChanged(ChangeEvent e) {
 		JSlider source = (JSlider)e.getSource();
 	    if (!source.getValueIsAdjusting()) {
-	        setDelay((int)source.getValue());
+	        setDelay(source.getValue());
 	    }
 	}
 

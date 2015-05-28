@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -45,7 +45,7 @@ public interface KMIPEncoderInterface {
 	 * @param c : 	the <code>KMIPContainer</code> to be encoded.
 	 * @return		<code>ArrayList{@literal <}Byte{@literal >}</code>
 	 */
-	public ArrayList<Byte> encodeRequest(KMIPContainer c);
+	ArrayList<Byte> encodeRequest(KMIPContainer c);
 	
 	/**
 	 * Encodes a KMIPContainer and returns a KMIP-Response-Message as a TTLV-encoded hexadecimal 
@@ -54,6 +54,6 @@ public interface KMIPEncoderInterface {
 	 * @param c : 	the <code>KMIPContainer</code> to be encoded.
 	 * @return		<code>ArrayList{@literal <}Byte{@literal >}</code>
 	 */
-	public ArrayList<Byte> encodeResponse(KMIPContainer c);
+	ArrayList<Byte> encodeResponse(KMIPContainer c);
 
 }

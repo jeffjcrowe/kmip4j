@@ -19,7 +19,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -55,7 +55,7 @@ public interface KLMSAdapterInterface {
 	 * @param asynchronousIndicator : 	indicates if operation is executed asynchronous. <code>True</code> if asynchronous.
 	 * @return							<code>KMIPBatch</code> 
 	 */
-	public KMIPBatch doProcess(KMIPBatch requestBatch, Credential credential, boolean asynchronousIndicator); 
+	KMIPBatch doProcess(KMIPBatch requestBatch, Credential credential, boolean asynchronousIndicator);
 
 	/**
 	 * Allows to set the KLMS from the Skeleton via dynamic class loading. 
@@ -66,7 +66,7 @@ public interface KLMSAdapterInterface {
 	 * @throws IllegalAccessException
 	 * @throws ClassNotFoundException
 	 */
-	public void setKLMS(String klmsPath, String defaultPath)  throws  InstantiationException, IllegalAccessException, ClassNotFoundException;
+	void setKLMS(String klmsPath, String defaultPath)  throws  InstantiationException, IllegalAccessException, ClassNotFoundException;
 
 	
 	/**
@@ -75,6 +75,6 @@ public interface KLMSAdapterInterface {
 	 * 
 	 * @return <code>HashMap{@literal <}String, String{@literal >}</code>
 	 */
-	public HashMap<String, String> getStatus();
+	HashMap<String, String> getStatus();
 
 }

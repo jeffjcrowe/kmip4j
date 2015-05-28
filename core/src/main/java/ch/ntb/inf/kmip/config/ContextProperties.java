@@ -26,7 +26,6 @@
 package ch.ntb.inf.kmip.config;
 
 import java.io.File;
-import java.net.URISyntaxException;
 import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilder;

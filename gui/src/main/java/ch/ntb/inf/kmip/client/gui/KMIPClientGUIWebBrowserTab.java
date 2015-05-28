@@ -59,7 +59,7 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
 	private JEditorPane jep;
 	private JComboBox<String> urlBox;
 	private JButton backButton, forwardButton;
-	private ArrayList<String> pageList = new ArrayList<String>();
+	private ArrayList<String> pageList = new ArrayList<>();
 	private int pageIndex = 0;
 	 
 	private String[] urls = new String[]{
@@ -93,8 +93,8 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
 	private JPanel makeURLSelectionBox(){
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.setBackground(Color.white);
-		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(urlDescriptions);
-		urlBox = new JComboBox<String>(model);
+		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(urlDescriptions);
+		urlBox = new JComboBox<>(model);
 		urlBox.setSelectedIndex(0);
 		urlBox.setEditable(false);
 		urlBox.addActionListener(this);
@@ -156,7 +156,7 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
 		java.net.URL imgURL = ClassLoader.getSystemClassLoader().getResource(path);
 		if (imgURL != null) {
 			ImageIcon i = new ImageIcon(imgURL, description);
-			i.setImage(i.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));;
+			i.setImage(i.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
 			return i;
 		} else {
 			logger.error("Couldn't find file: " + path);
@@ -170,14 +170,14 @@ public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListe
         pageIndex--;
         try {
             showPage(
-                    new URL((String) pageList.get(pageIndex)), false);
+                    new URL(pageList.get(pageIndex)), false);
         } catch (Exception e) {}
     }
     
     private void actionForward() {
         pageIndex++;
         try {
-            showPage(new URL((String) pageList.get(pageIndex)), false);
+            showPage(new URL(pageList.get(pageIndex)), false);
         } catch (Exception e) {}
     }
 			

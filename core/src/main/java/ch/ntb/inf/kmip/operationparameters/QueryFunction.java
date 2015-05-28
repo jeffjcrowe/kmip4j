@@ -24,7 +24,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -39,7 +39,6 @@ import ch.ntb.inf.kmip.kmipenum.EnumQueryFunction;
 import ch.ntb.inf.kmip.kmipenum.EnumTag;
 import ch.ntb.inf.kmip.kmipenum.EnumType;
 import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.types.KMIPEnumeration;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 import ch.ntb.inf.kmip.types.KMIPType;
 
@@ -48,7 +47,7 @@ public class QueryFunction extends Attribute {
 	public QueryFunction(){
 		super(new KMIPTextString("Query Function"), new EnumTag(EnumTag.QueryFunction), new EnumType(EnumType.Enumeration));
 		this.values = new KMIPAttributeValue[1];
-		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.QueryFunction), ((KMIPEnumeration)new EnumQueryFunction()));
+		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.QueryFunction), new EnumQueryFunction());
 		this.values[0].setName(this.getAttributeName());
 	}
 	

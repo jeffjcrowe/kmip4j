@@ -24,7 +24,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -109,38 +109,23 @@ public class DerivationParameters {
 	
 	
 	public boolean hasCryptographicParameters(){
-		if(this.cryptographicParameters != null){
-			return true;
-		}
-		return false;
+		return this.cryptographicParameters != null;
 	}
 	
 	public boolean hasInitializationVector(){
-		if(this.initializationVector != null){
-			return true;
-		}
-		return false;
+		return this.initializationVector != null;
 	}
 	
 	public boolean hasDerivationData(){
-		if(this.derivationData != null){
-			return true;
-		}
-		return false;
+		return this.derivationData != null;
 	}
 	
 	public boolean hasSalt(){
-		if(this.salt != null){
-			return true;
-		}
-		return false;
+		return this.salt != null;
 	}
 	
 	public boolean hasIterationCount(){
-		if(this.iterationCount != null){
-			return true;
-		}
-		return false;
+		return this.iterationCount != null;
 	}
 	
 	

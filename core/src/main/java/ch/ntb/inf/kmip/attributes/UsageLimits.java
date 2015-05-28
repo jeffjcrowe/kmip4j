@@ -18,7 +18,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -32,7 +32,6 @@ import ch.ntb.inf.kmip.kmipenum.EnumTag;
 import ch.ntb.inf.kmip.kmipenum.EnumType;
 import ch.ntb.inf.kmip.kmipenum.EnumUsageLimitsUnit;
 import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.types.KMIPEnumeration;
 import ch.ntb.inf.kmip.types.KMIPLongInteger;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 
@@ -41,8 +40,8 @@ public class UsageLimits extends Attribute {
 	public UsageLimits(){
 		super(new KMIPTextString("Usage Limits"), new EnumTag(EnumTag.UsageLimits), new EnumType(EnumType.Structure));
 		this.values = new KMIPAttributeValue[3];
-		this.values[2] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.UsageLimitsUnit), 
-				((KMIPEnumeration)new EnumUsageLimitsUnit()));
+		this.values[2] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.UsageLimitsUnit),
+				new EnumUsageLimitsUnit());
 		this.values[2].setName("Usage Limits Unit");
 		
 		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.LongInteger), new EnumTag(EnumTag.UsageLimitsCount), new KMIPLongInteger());

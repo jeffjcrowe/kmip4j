@@ -39,7 +39,7 @@ public class KMIPUtils {
 		if (s == null) {
 			return null;
 		}
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 	    for (int i = 0; i < s.length()-1; i += 2) {
 	        al.add((byte) ((Character.digit(s.charAt(i), 16) << 4) + Character.digit(s.charAt(i+1), 16)));
 	    }
@@ -54,7 +54,7 @@ public class KMIPUtils {
 		if (al == null) {
 			return null;
 		}
-		StringBuffer buf = new StringBuffer();	
+		StringBuilder buf = new StringBuilder();
 		for (Byte b : al) {
 			buf.append(String.format("%02X", b));
 		}
@@ -66,7 +66,7 @@ public class KMIPUtils {
 	 * @return HEX-formated String
 	 */
 	public static String convertArrayListToHexString(List<Byte> al){
-		StringBuffer buf = new StringBuffer();	
+		StringBuilder buf = new StringBuilder();
 		for (Byte b : al) {
 			buf.append(String.format("%02X", b));
 		}
@@ -98,7 +98,7 @@ public class KMIPUtils {
 	}
 	
 	public static String convertByteStringToHexString(byte[] bytes){
-		StringBuffer buf = new StringBuffer();	
+		StringBuilder buf = new StringBuilder();
 		for (Byte b : bytes) {
 			if(b > 0){
 				buf.append(String.format("%02X", b));
@@ -112,9 +112,9 @@ public class KMIPUtils {
 	
 	
 	public static ArrayList<Byte> convertByteArrayToArrayList(byte[] bytes){
-		ArrayList<Byte> al =  new ArrayList<Byte>();
-		for(int i = 0; i < bytes.length; i++){
-			al.add(bytes[i]);
+		ArrayList<Byte> al = new ArrayList<>();
+		for (byte aByte : bytes) {
+			al.add(aByte);
 		}
 		return al;
 	}

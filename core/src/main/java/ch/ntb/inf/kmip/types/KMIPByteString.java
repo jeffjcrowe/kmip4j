@@ -17,7 +17,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -76,9 +76,9 @@ public class KMIPByteString extends KMIPType {
 
 
 	public ArrayList<Byte> toArrayList(KMIPAttributeValue attributeValue) {
-		ArrayList<Byte> returnValue = new ArrayList<Byte>();
-		for (int i = 0; i < value.length; i++) {
-			returnValue.add(value[i]);
+		ArrayList<Byte> returnValue = new ArrayList<>();
+		for (byte aValue : value) {
+			returnValue.add(aValue);
 		}
 		attributeValue.setLength(returnValue.size());
 
@@ -90,9 +90,9 @@ public class KMIPByteString extends KMIPType {
 	}
 	
 	public ArrayList<Byte> toArrayList(){
-		ArrayList<Byte> returnValue = new ArrayList<Byte>();
-		for (int i = 0; i < value.length; i++) {
-			returnValue.add(value[i]);
+		ArrayList<Byte> returnValue = new ArrayList<>();
+		for (byte aValue : value) {
+			returnValue.add(aValue);
 		}
 		this.setLength(returnValue.size());
 
@@ -104,7 +104,7 @@ public class KMIPByteString extends KMIPType {
 	}
 	
 	public ArrayList<Byte> pad(int n){
-		ArrayList<Byte> al = new ArrayList<Byte>();
+		ArrayList<Byte> al = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
 			al.add((byte) 0x00);
 		}
