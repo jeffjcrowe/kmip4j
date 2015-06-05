@@ -31,7 +31,8 @@ import java.io.InputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.skeleton.KMIPSkeleton;
 
@@ -39,7 +40,7 @@ import ch.ntb.inf.kmip.skeleton.KMIPSkeleton;
 
 class KLMSServerHandler implements Runnable {
 	
-	private static final Logger logger = Logger.getLogger(KLMSServerHandler.class);
+	private static final Logger logger = LoggerFactory.getLogger(KLMSServerHandler.class);
 	private final Socket clientSocket;
 	private KMIPSkeleton skeleton;
 	

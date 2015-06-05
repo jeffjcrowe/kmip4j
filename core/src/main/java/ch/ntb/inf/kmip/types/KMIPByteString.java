@@ -35,13 +35,11 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
 public class KMIPByteString extends KMIPType {
 	
 	private final int defaultLength = 0;	// Varies, Multiple of 8. Use length!
-	
-	private byte[] value;		
-	int length;
+	private byte[] value;
 
 	public KMIPByteString(byte[] value) {
 		super();
-		this.value = value;
+		setValue(value);
 	}
 	
 	public KMIPByteString(String value) {
@@ -62,18 +60,8 @@ public class KMIPByteString extends KMIPType {
 
 	
 	public void setValue(String value) {
-		this.value = KMIPUtils.convertHexStringToByteArray(value);
+		setValue(KMIPUtils.convertHexStringToByteArray(value));
 	}
-
-	public int getLength() {
-		return length;
-	}
-
-
-	public void setLength(int length) {
-		this.length = length;
-	}
-
 
 	public ArrayList<Byte> toArrayList(KMIPAttributeValue attributeValue) {
 		ArrayList<Byte> returnValue = new ArrayList<>();
@@ -82,7 +70,7 @@ public class KMIPByteString extends KMIPType {
 		}
 		attributeValue.setLength(returnValue.size());
 
-		int pLen = 8 - (length % 8);
+		int pLen = 8 - (value.length % 8);
 		if ((pLen > 0) && (pLen < 8)) {
 			returnValue.addAll(pad(pLen));
 		}
@@ -94,9 +82,8 @@ public class KMIPByteString extends KMIPType {
 		for (byte aValue : value) {
 			returnValue.add(aValue);
 		}
-		this.setLength(returnValue.size());
 
-		int pLen = 8 - (length % 8);
+		int pLen = 8 - (value.length % 8);
 		if ((pLen > 0) && (pLen < 8)) {
 			returnValue.addAll(pad(pLen));
 		}
@@ -111,13 +98,14 @@ public class KMIPByteString extends KMIPType {
 		return al;
 	}
 
-
+	@Override
 	public int getDefaultLength() {
 		return defaultLength;
 	}
 
+	@Override
 	public String getValueString() {
 		return KMIPUtils.convertByteStringToHexString(value);
 	}
-	
+
 }

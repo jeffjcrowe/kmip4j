@@ -25,35 +25,28 @@
 
 package ch.ntb.inf.kmip.attributes;
 
-import ch.ntb.inf.kmip.kmipenum.EnumObjectType;
-import ch.ntb.inf.kmip.kmipenum.EnumTag;
-import ch.ntb.inf.kmip.kmipenum.EnumType;
-import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.types.KMIPTextString;
+import ch.ntb.inf.kmip.kmipenum.*;
+import ch.ntb.inf.kmip.objects.base.SingleAttribute;
 import ch.ntb.inf.kmip.types.KMIPType;
 
-public class ObjectType extends Attribute {
+public class ObjectType extends SingleAttribute<EnumObjectType> {
+
+	public ObjectType(EnumObjectType value){
+		super("Object Type",
+				new EnumTag(EnumTag.ObjectType),
+				new EnumType(EnumType.Enumeration),
+				value);
+	}
 
 	public ObjectType(){
-		super(new KMIPTextString("Object Type"), new EnumTag(EnumTag.ObjectType), new EnumType(EnumType.Enumeration));
-		this.values = new KMIPAttributeValue[1];
-		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.ObjectType),
-				new EnumObjectType());
-		this.values[0].setName(this.getAttributeName());
-	}
-	
-	public ObjectType(KMIPType value) {
-		this();
-		this.values[0].setValue(value);
-	}
-	
-	public ObjectType(int value) {
-		this();
-		this.values[0].setValue(new EnumObjectType(value));
-	}
-	
-	public KMIPType getObjectType() {
-		return this.values[0].getValueAsKMIPType();
+		this(new EnumObjectType());
 	}
 
+	public ObjectType(KMIPType value){
+		this((EnumObjectType) value);
+	}
+
+	public ObjectType(int value){
+		this(new EnumObjectType(value));
+	}
 }

@@ -103,6 +103,15 @@ public class KMIPBatch {
 		templateAttributeStructures = new ArrayList<>();
 	}
 
+	/**
+	 * Set the 3 result failure components
+	 */
+	public void setFailure(EnumResultStatus status, EnumResultReason reason, String message) {
+		setResultStatus(status);
+		setResultReason(reason);
+		setResultMessage(message);
+	}
+
 
 	/**
 	 * Adds an Attribute to the <code>ArrayList{@literal <}Attribute{@literal >}</code>.
@@ -223,17 +232,28 @@ public class KMIPBatch {
 	}
 
 	/**
-	 * Returns the attribute matching the given name (or null if not found)
+	 * Returns the attribute matching the given type (or null if not found)
 	 */
-	public Attribute getAttribute(String name) {
+	public <T extends Attribute> T getAttribute(Class<T> cls) {
 		for(Attribute attrib : attributes) {
-			if (attrib.getAttributeName().equalsIgnoreCase(name)) {
-				return attrib;
+			if (cls.isAssignableFrom(attrib.getClass())) {
+				@SuppressWarnings("unchecked")
+				T cast = (T)attrib;
+				return cast;
+			}
+		}
+		for(TemplateAttributeStructure templateAttrib : templateAttributeStructures) {
+			for(Attribute attrib : templateAttrib.getAttributes()) {
+				if (cls.isAssignableFrom(attrib.getClass())) {
+					@SuppressWarnings("unchecked")
+					T cast = (T)attrib;
+					return cast;
+				}
 			}
 		}
 		return null;
 	}
-		
+
 	/**
 	 * Returns the Template Attribute Structure from the 
 	 * <code>ArrayList{@literal <}TemplateAttributeStructure{@literal >}</code> 

@@ -16,7 +16,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -31,14 +31,15 @@ import java.net.ServerSocket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.skeleton.KMIPSkeleton;
 
 
 public class KMIPSkeletonTransportLayer implements KMIPSkeletonTransportLayerInterface {
 
-	private static final Logger logger = Logger.getLogger(KMIPSkeletonTransportLayer.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPSkeletonTransportLayer.class);
 	
 	private int port = 5555;	// default
 		

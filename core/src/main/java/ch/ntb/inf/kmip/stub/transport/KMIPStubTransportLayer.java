@@ -29,14 +29,15 @@ package ch.ntb.inf.kmip.stub.transport;
 import java.util.ArrayList;
 import java.util.concurrent.FutureTask;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The KMIPStubTransportLayer provides the communication between a server and a client via TCP-Sockets. 
  */
 public class KMIPStubTransportLayer implements KMIPStubTransportLayerInterface {
 	
-	private static final Logger logger = Logger.getLogger(KMIPStubTransportLayer.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPStubTransportLayer.class);
 	
 	private int PORT = 5696;						// default values
 	private String targetHostname = "localhost";	// default values

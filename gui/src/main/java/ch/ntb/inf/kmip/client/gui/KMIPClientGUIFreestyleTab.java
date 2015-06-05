@@ -46,7 +46,8 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.container.KMIPBatch;
 import ch.ntb.inf.kmip.container.KMIPContainer;
@@ -64,7 +65,7 @@ import ch.ntb.inf.kmip.types.KMIPInteger;
 public class KMIPClientGUIFreestyleTab extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1694350508510923646L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUIFreestyleTab.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUIFreestyleTab.class);
 	private static final String[] string_trueFalse = new String[]{"true", "false"};
 		
 	private static final String[] string_Operation = new String[]{"Create",	"Create Key Pair","Register","Re-key","Derive Key","Certify","Re-certify",

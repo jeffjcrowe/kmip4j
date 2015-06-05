@@ -42,7 +42,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.container.KMIPContainer;
 import ch.ntb.inf.kmip.test.UCStringCompare;
@@ -51,7 +52,7 @@ import ch.ntb.inf.kmip.test.UCStringCompare;
 public class KMIPClientGUIUseCaseViewer extends JPanel implements ActionListener, ChangeListener{
 
 	private static final long serialVersionUID = -6061716849716527804L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUIUseCaseViewer.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUIUseCaseViewer.class);
 	
 	private KMIPClientGUI gui;
 	private String responseFromServer;

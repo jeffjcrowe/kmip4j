@@ -24,8 +24,8 @@ package ch.ntb.inf.kmip.client.gui;
 
 import ch.ntb.inf.kmip.stub.KMIPStub;
 import ch.ntb.inf.kmip.stub.KMIPStubInterface;
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
@@ -39,7 +39,7 @@ import java.net.URL;
 public class KMIPClientGUI extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUI.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUI.class);
 	
 	private Container cp;
 	private JPanel centerContent;
@@ -205,7 +205,6 @@ public class KMIPClientGUI extends JFrame{
 	
 	public static void main(String[] args) {
 		// configure Logger
-		DOMConfigurator.configureAndWatch( "config/log4j-1.2.17.xml", 60*1000 );
 		logger.info("Hello KMIPClient! What a beatiful day;)");
 		new KMIPClientGUI();
 	}

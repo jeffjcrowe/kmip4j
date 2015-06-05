@@ -26,100 +26,22 @@
 
 package ch.ntb.inf.kmip.process.decoder;
 
+import ch.ntb.inf.kmip.attributes.*;
+import ch.ntb.inf.kmip.container.KMIPBatch;
+import ch.ntb.inf.kmip.container.KMIPContainer;
+import ch.ntb.inf.kmip.kmipenum.*;
+import ch.ntb.inf.kmip.objects.*;
+import ch.ntb.inf.kmip.objects.base.*;
+import ch.ntb.inf.kmip.objects.managed.*;
+import ch.ntb.inf.kmip.operationparameters.*;
+import ch.ntb.inf.kmip.process.EnumStaticValues;
+import ch.ntb.inf.kmip.types.*;
+import ch.ntb.inf.kmip.utils.KMIPUtils;
+
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
-
-import ch.ntb.inf.kmip.attributes.CompromiseOccurrenceDate;
-import ch.ntb.inf.kmip.attributes.CryptographicAlgorithm;
-import ch.ntb.inf.kmip.attributes.CryptographicLength;
-import ch.ntb.inf.kmip.attributes.CryptographicParameters;
-import ch.ntb.inf.kmip.attributes.CryptographicUsageMask;
-import ch.ntb.inf.kmip.attributes.LastChangeDate;
-import ch.ntb.inf.kmip.attributes.LeaseTime;
-import ch.ntb.inf.kmip.attributes.Name;
-import ch.ntb.inf.kmip.attributes.ObjectType;
-import ch.ntb.inf.kmip.attributes.RevocationReason;
-import ch.ntb.inf.kmip.attributes.UniqueIdentifier;
-import ch.ntb.inf.kmip.attributes.UsageLimits;
-import ch.ntb.inf.kmip.container.KMIPBatch;
-import ch.ntb.inf.kmip.container.KMIPContainer;
-import ch.ntb.inf.kmip.kmipenum.EnumBatchError;
-import ch.ntb.inf.kmip.kmipenum.EnumBlockCipherMode;
-import ch.ntb.inf.kmip.kmipenum.EnumCancellationResult;
-import ch.ntb.inf.kmip.kmipenum.EnumCertificateRequestType;
-import ch.ntb.inf.kmip.kmipenum.EnumCertificateType;
-import ch.ntb.inf.kmip.kmipenum.EnumCredentialType;
-import ch.ntb.inf.kmip.kmipenum.EnumCryptographicAlgorithm;
-import ch.ntb.inf.kmip.kmipenum.EnumDerivationMethod;
-import ch.ntb.inf.kmip.kmipenum.EnumHashingAlgorithm;
-import ch.ntb.inf.kmip.kmipenum.EnumKeyCompressionType;
-import ch.ntb.inf.kmip.kmipenum.EnumKeyFormatType;
-import ch.ntb.inf.kmip.kmipenum.EnumKeyRoleType;
-import ch.ntb.inf.kmip.kmipenum.EnumObjectType;
-import ch.ntb.inf.kmip.kmipenum.EnumOpaqueDataType;
-import ch.ntb.inf.kmip.kmipenum.EnumOperation;
-import ch.ntb.inf.kmip.kmipenum.EnumPaddingMethod;
-import ch.ntb.inf.kmip.kmipenum.EnumPutFunction;
-import ch.ntb.inf.kmip.kmipenum.EnumQueryFunction;
-import ch.ntb.inf.kmip.kmipenum.EnumRecommendedCurve;
-import ch.ntb.inf.kmip.kmipenum.EnumResultReason;
-import ch.ntb.inf.kmip.kmipenum.EnumResultStatus;
-import ch.ntb.inf.kmip.kmipenum.EnumSecretDataType;
-import ch.ntb.inf.kmip.kmipenum.EnumSplitKeyMethod;
-import ch.ntb.inf.kmip.kmipenum.EnumTag;
-import ch.ntb.inf.kmip.kmipenum.EnumType;
-import ch.ntb.inf.kmip.kmipenum.EnumValidityIndicator;
-import ch.ntb.inf.kmip.kmipenum.EnumWrappingMethod;
-import ch.ntb.inf.kmip.objects.Authentication;
-import ch.ntb.inf.kmip.objects.EncryptionKeyInformation;
-import ch.ntb.inf.kmip.objects.KeyMaterial;
-import ch.ntb.inf.kmip.objects.MACorSignatureKeyInformation;
-import ch.ntb.inf.kmip.objects.MessageExtension;
-import ch.ntb.inf.kmip.objects.VendorExtension;
-import ch.ntb.inf.kmip.objects.base.Attribute;
-import ch.ntb.inf.kmip.objects.base.CommonTemplateAttribute;
-import ch.ntb.inf.kmip.objects.base.Credential;
-import ch.ntb.inf.kmip.objects.base.KeyBlock;
-import ch.ntb.inf.kmip.objects.base.KeyValue;
-import ch.ntb.inf.kmip.objects.base.KeyWrappingData;
-import ch.ntb.inf.kmip.objects.base.KeyWrappingSpecification;
-import ch.ntb.inf.kmip.objects.base.PrivateKeyTemplateAttribute;
-import ch.ntb.inf.kmip.objects.base.PublicKeyTemplateAttribute;
-import ch.ntb.inf.kmip.objects.base.TemplateAttribute;
-import ch.ntb.inf.kmip.objects.base.TemplateAttributeStructure;
-import ch.ntb.inf.kmip.objects.base.TransparentKeyStructure;
-import ch.ntb.inf.kmip.objects.managed.Certificate;
-import ch.ntb.inf.kmip.objects.managed.OpaqueObject;
-import ch.ntb.inf.kmip.objects.managed.PrivateKey;
-import ch.ntb.inf.kmip.objects.managed.PublicKey;
-import ch.ntb.inf.kmip.objects.managed.SecretData;
-import ch.ntb.inf.kmip.objects.managed.SplitKey;
-import ch.ntb.inf.kmip.objects.managed.SymmetricKey;
-import ch.ntb.inf.kmip.objects.managed.Template;
-import ch.ntb.inf.kmip.operationparameters.AsynchronousCorrelationValue;
-import ch.ntb.inf.kmip.operationparameters.CertificateRequest;
-import ch.ntb.inf.kmip.operationparameters.DerivationParameters;
-import ch.ntb.inf.kmip.operationparameters.MaximumItems;
-import ch.ntb.inf.kmip.operationparameters.Offset;
-import ch.ntb.inf.kmip.operationparameters.QueryFunction;
-import ch.ntb.inf.kmip.operationparameters.QueryOperation;
-import ch.ntb.inf.kmip.operationparameters.ReplacedUniqueIdentifier;
-import ch.ntb.inf.kmip.operationparameters.StorageStatusMask;
-import ch.ntb.inf.kmip.operationparameters.ValidityDate;
-import ch.ntb.inf.kmip.process.EnumStaticValues;
-import ch.ntb.inf.kmip.types.KMIPBigInteger;
-import ch.ntb.inf.kmip.types.KMIPBoolean;
-import ch.ntb.inf.kmip.types.KMIPByteString;
-import ch.ntb.inf.kmip.types.KMIPDateTime;
-import ch.ntb.inf.kmip.types.KMIPEnumeration;
-import ch.ntb.inf.kmip.types.KMIPInteger;
-import ch.ntb.inf.kmip.types.KMIPInterval;
-import ch.ntb.inf.kmip.types.KMIPLongInteger;
-import ch.ntb.inf.kmip.types.KMIPTextString;
-import ch.ntb.inf.kmip.types.KMIPType;
-import ch.ntb.inf.kmip.utils.KMIPUtils;
 
 
 public class KMIPDecoder implements KMIPDecoderInterface{
@@ -260,16 +182,16 @@ public class KMIPDecoder implements KMIPDecoderInterface{
 	private void decodeProtocolVersionMajor(List<Byte> al) throws KMIPUnexpectedTypeException, KMIPUnexpectedTagException, KMIPPaddingExpectedException, KMIPProtocolVersionException{
 		checkTagAndType(EnumTag.ProtocolVersionMajor, EnumType.Integer, al);
 		KMIPInteger value = decodeKMIPInteger(al);
-		if(value.getValue() != EnumStaticValues.ProtocolVersionMajor.getValue()){
-			throw new KMIPProtocolVersionException("Protocol Version Major inconsistent, " + EnumStaticValues.ProtocolVersionMajor.getValue() + " expected");
+		if(!EnumStaticValues.ProtocolVersionMajor.hasValue(value.getValue())){
+			throw new KMIPProtocolVersionException("Protocol Version Major inconsistent, " + EnumStaticValues.ProtocolVersionMajor.getValues() + " expected");
 		}
 	}
 	
 	private void decodeProtocolVersionMinor(List<Byte> al) throws KMIPUnexpectedTypeException, KMIPUnexpectedTagException, KMIPProtocolVersionException, KMIPPaddingExpectedException{
 		checkTagAndType(EnumTag.ProtocolVersionMinor, EnumType.Integer, al);
 		KMIPInteger value = decodeKMIPInteger(al);
-		if(value.getValue() != EnumStaticValues.ProtocolVersionMinor.getValue()){
-			throw new KMIPProtocolVersionException("Protocol Version Minor inconsistent, " + EnumStaticValues.ProtocolVersionMinor.getValue() + " expected");
+		if(!EnumStaticValues.ProtocolVersionMinor.hasValue(value.getValue())){
+			throw new KMIPProtocolVersionException("Protocol Version Minor inconsistent, " + EnumStaticValues.ProtocolVersionMinor.getValues() + " expected");
 		}
 	}
 	
@@ -1630,6 +1552,7 @@ public class KMIPDecoder implements KMIPDecoderInterface{
 
 				return retAttrib;
 			} catch (Exception e) {
+				e.printStackTrace();
 				throw new KMIPUnexpectedAttributeNameException("Unexpected Attribute: " + attributeName.getValue());
 			}
 

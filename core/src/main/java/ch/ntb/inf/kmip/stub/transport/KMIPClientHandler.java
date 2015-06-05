@@ -33,11 +33,12 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class KMIPClientHandler implements Callable<ArrayList<Byte>> {
 
-	private static final Logger logger = Logger.getLogger(KMIPClientHandler.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientHandler.class);
 	
 	private int port;
 	private String targetHostname;

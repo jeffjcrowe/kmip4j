@@ -43,13 +43,14 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class KMIPClientGUIUseCaseChooser extends JPanel implements ListSelectionListener, ActionListener{
 
 	private static final long serialVersionUID = -6061716849716527804L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUIUseCaseChooser.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUIUseCaseChooser.class);
 
 	private KMIPClientGUI gui;
 	private JList<String> chooseUC;

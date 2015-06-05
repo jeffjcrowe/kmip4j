@@ -593,6 +593,7 @@ public class KMIPClientGUIxml{
 		try{
 			return (Attribute) Class.forName("ch.ntb.inf.kmip.attributes." + className).newInstance();
 		} catch(Exception e){
+			e.printStackTrace();
 			try{
 				return (Attribute) Class.forName("ch.ntb.inf.kmip.operationparameters." + className).newInstance();
 			} catch(Exception e2){

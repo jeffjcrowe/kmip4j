@@ -42,12 +42,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class KMIPClientGUISearchWindow extends JFrame implements ActionListener {
 	
 	private static final long serialVersionUID = -7444352894855282327L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUISearchWindow.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUISearchWindow.class);
 	
 	private JTextField searchField;
 	private JTextArea ta;

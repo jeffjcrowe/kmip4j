@@ -172,8 +172,8 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 	private void encodeProtocolVersion(ArrayList<Byte> al) {
 		encodeTagAndType(EnumTag.ProtocolVersion, EnumType.Structure, al);
 		int pos = al.size();
-		encodeInteger(EnumTag.ProtocolVersionMajor, EnumStaticValues.ProtocolVersionMajor.getValue(), al);
-		encodeInteger(EnumTag.ProtocolVersionMinor, EnumStaticValues.ProtocolVersionMinor.getValue(), al);
+		encodeInteger(EnumTag.ProtocolVersionMajor, EnumStaticValues.ProtocolVersionMajor.getDefault(), al);
+		encodeInteger(EnumTag.ProtocolVersionMinor, EnumStaticValues.ProtocolVersionMinor.getDefault(), al);
 		createLength(al.size() - pos, pos, al);
 	}
 
@@ -586,7 +586,7 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 		encodeTagAndType(EnumTag.CertificateValue, EnumType.ByteString, al);
 		int pos = al.size();
 		al.addAll(certificateValue.toArrayList());
-		createLength(certificateValue.getLength(), pos, al);
+		createLength(certificateValue.getValue().length, pos, al);
 	}
 	
 	private void encodeSplitKey(SplitKey splitKey, ArrayList<Byte> al) {
@@ -913,7 +913,7 @@ public class KMIPEncoder implements KMIPEncoderInterface {
 		encodeTagAndType(tag, EnumType.ByteString, al);
 		int pos = al.size();
 		al.addAll(kmipByteString.toArrayList());
-		createLength(kmipByteString.getLength(), pos, al);
+		createLength(kmipByteString.getValue().length, pos, al);
 	}
 	
 	private void encodeTextString(int tag, KMIPTextString kmipTextString, ArrayList<Byte> al) {

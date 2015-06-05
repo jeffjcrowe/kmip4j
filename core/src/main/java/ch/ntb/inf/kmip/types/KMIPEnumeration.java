@@ -96,6 +96,10 @@ public abstract class KMIPEnumeration extends KMIPType{
 	public int getValue(){
 		return value.getValue();
 	}
-	
+
+	@Override
+	public String toString() {
+		return this.getClass().getSimpleName() + "{" + getKey() + "," + getValue() + "}";
+	}
 }
 

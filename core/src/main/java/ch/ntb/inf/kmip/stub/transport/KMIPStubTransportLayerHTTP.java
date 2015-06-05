@@ -33,7 +33,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.utils.KMIPUtils;
 
@@ -43,7 +44,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
  */
 public class KMIPStubTransportLayerHTTP implements KMIPStubTransportLayerInterface{
 
-	private static final Logger logger = Logger.getLogger(KMIPStubTransportLayerHTTP.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPStubTransportLayerHTTP.class);
 	private String url;
 	
 	public KMIPStubTransportLayerHTTP() {

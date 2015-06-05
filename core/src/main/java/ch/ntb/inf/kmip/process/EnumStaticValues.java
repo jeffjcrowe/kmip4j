@@ -25,19 +25,32 @@
 
 package ch.ntb.inf.kmip.process;
 
+import java.util.Collection;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public enum EnumStaticValues {
-	
-	ProtocolVersionMajor(0x00000001),
-	ProtocolVersionMinor(0x00000000);
 
+	// first value is default
+	ProtocolVersionMajor(1),
+	ProtocolVersionMinor(2, 1, 0);
 
-	private int value;
+	private List<Integer> values;
 
-	public int getValue() {
-		return value;
+	public Collection<Integer> getValues() {
+		return values;
 	}
 
-	EnumStaticValues(int value) {
-		this.value = value;
+	EnumStaticValues(Integer... values) {
+		this.values = asList(values);
+	}
+
+	public boolean hasValue(int value) {
+		return values.contains(value);
+	}
+
+	public int getDefault() {
+		return values.get(0);
 	}
 }

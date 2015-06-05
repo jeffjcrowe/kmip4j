@@ -22,14 +22,15 @@ package ch.ntb.inf.kmip.utils;
  *
  * 
  */
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 public class KMIPUtils {
 	
-	private static final Logger logger = Logger.getLogger(KMIPUtils.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPUtils.class);
 	
 	/** 
 	 * @param String which contains a HEX-Number, that needs to be converted to an ArrayList

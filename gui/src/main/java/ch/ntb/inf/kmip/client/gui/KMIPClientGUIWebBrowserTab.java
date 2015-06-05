@@ -48,13 +48,14 @@ import javax.swing.text.Document;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLFrameHyperlinkEvent;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class KMIPClientGUIWebBrowserTab extends JPanel implements HyperlinkListener, ActionListener{
 
 	private static final long serialVersionUID = -175072687855389580L;
 
-	private static final Logger logger = Logger.getLogger(KMIPClientGUIWebBrowserTab.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUIWebBrowserTab.class);
 	
 	private JEditorPane jep;
 	private JComboBox<String> urlBox;

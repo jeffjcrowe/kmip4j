@@ -29,27 +29,28 @@ import ch.ntb.inf.kmip.kmipenum.EnumCryptographicAlgorithm;
 import ch.ntb.inf.kmip.kmipenum.EnumTag;
 import ch.ntb.inf.kmip.kmipenum.EnumType;
 import ch.ntb.inf.kmip.objects.base.Attribute;
+import ch.ntb.inf.kmip.objects.base.SingleAttribute;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 import ch.ntb.inf.kmip.types.KMIPType;
 
-public class CryptographicAlgorithm extends Attribute {
+public class CryptographicAlgorithm extends SingleAttribute<EnumCryptographicAlgorithm> {
+
+	public CryptographicAlgorithm(EnumCryptographicAlgorithm value){
+		super("Cryptographic Algorithm",
+				new EnumTag(EnumTag.CryptographicAlgorithm),
+				new EnumType(EnumType.Enumeration),
+				value);
+	}
 
 	public CryptographicAlgorithm(){
-		super(new KMIPTextString("Cryptographic Algorithm"), new EnumTag(EnumTag.CryptographicAlgorithm), new EnumType(EnumType.Enumeration));
-		this.values = new KMIPAttributeValue[1];
-		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.CryptographicAlgorithm),
-				new EnumCryptographicAlgorithm());
-		this.values[0].setName(this.getAttributeName());
+		this(new EnumCryptographicAlgorithm());
 	}
-	
-	public CryptographicAlgorithm(KMIPType value){
-		this();
-		this.values[0].setValue(value);
-	}
-	
+
 	public CryptographicAlgorithm(int value){
-		this();
-		this.values[0].setValue(new EnumCryptographicAlgorithm(value));
+		this(new EnumCryptographicAlgorithm(value));
 	}
-	
+
+	public CryptographicAlgorithm(KMIPType type) {
+		this((EnumCryptographicAlgorithm) type);
+	}
 }

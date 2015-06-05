@@ -52,9 +52,9 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509KeyManager;
 import javax.net.ssl.X509TrustManager;
 
-import org.apache.log4j.Logger;
-
 import ch.ntb.inf.kmip.utils.KMIPUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The KMIPStubTransportLayerHTTPS provides the communication between a server and a client via HTTPS,
@@ -62,7 +62,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
  */
 public class KMIPStubTransportLayerHTTPS implements KMIPStubTransportLayerInterface{
 
-	private static final Logger logger = Logger.getLogger(KMIPStubTransportLayerHTTPS.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPStubTransportLayerHTTPS.class);
 	
 	private SSLSocketFactory factory;
 	private String url;

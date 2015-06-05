@@ -30,12 +30,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class KMIPClientGUISignal extends JPanel {
 
 	private static final long serialVersionUID = 7728992405923373790L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUISignal.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUISignal.class);
 	
 	private ImageIcon green;
 	private ImageIcon yellow;

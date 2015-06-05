@@ -52,7 +52,7 @@ public class EnumResultStatus extends KMIPEnumeration{
 		    } 
 		}
 	}
-	
+
 	public EnumResultStatus(){
 		try {
 			this.value = getEntry(EnumResultStatus.Default, values);
@@ -60,8 +60,8 @@ public class EnumResultStatus extends KMIPEnumeration{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+
 	public EnumResultStatus(int value){
 		try {
 			this.value = getEntry(value, values);
@@ -69,7 +69,7 @@ public class EnumResultStatus extends KMIPEnumeration{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public EnumResultStatus(String key){
 		setValue(key);
 	}

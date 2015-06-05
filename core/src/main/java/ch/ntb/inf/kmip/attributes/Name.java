@@ -27,23 +27,20 @@
 
 package ch.ntb.inf.kmip.attributes;
 
-import ch.ntb.inf.kmip.kmipenum.EnumNameType;
-import ch.ntb.inf.kmip.kmipenum.EnumTag;
-import ch.ntb.inf.kmip.kmipenum.EnumType;
-import ch.ntb.inf.kmip.objects.base.Attribute;
+import ch.ntb.inf.kmip.kmipenum.*;
+import ch.ntb.inf.kmip.objects.base.DualAttribute;
 import ch.ntb.inf.kmip.types.KMIPTextString;
 
-public class Name extends Attribute {
-
-
+public class Name extends DualAttribute<KMIPTextString, EnumNameType> {
 	public Name(){
-		super(new KMIPTextString("Name"), new EnumTag(EnumTag.Name), new EnumType(EnumType.Structure));
-		this.values = new KMIPAttributeValue[2];
-		this.values[0] = new KMIPAttributeValue(new EnumType(EnumType.TextString), new EnumTag(EnumTag.NameValue), new KMIPTextString());
-		this.values[0].setName("Name Value");
-		
-		this.values[1] = new KMIPAttributeValue(new EnumType(EnumType.Enumeration), new EnumTag(EnumTag.NameType), new EnumNameType());
-		this.values[1].setName("Name Type");
+		super("Name", new EnumTag(EnumTag.Name),
+				"Name Value", new EnumTag(EnumTag.NameValue), new EnumType(EnumType.TextString), new KMIPTextString(),
+				"Name Type", new EnumTag(EnumTag.NameType), new EnumType(EnumType.Enumeration), new EnumNameType());
 	}
-		
+
+	public Name(String name) {
+		this();
+		setValue1(new KMIPTextString(name));
+		setValue2(new EnumNameType(EnumNameType.UninterpretedTextString));
+	}
 }

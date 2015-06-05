@@ -27,7 +27,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.klms.db.KLMSIllegalOperationException;
 import ch.ntb.inf.klms.db.KLMSItemNotFoundException;
@@ -56,7 +57,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
 
 public class KLMSAdapter implements KLMSAdapterInterface{
 
-	private static final Logger logger = Logger.getLogger(KLMSAdapter.class);
+	private static final Logger logger = LoggerFactory.getLogger(KLMSAdapter.class);
 	private KLMSInterface klms;
 	
 	private HashMap<String, KMIPBatch> asynchronousPuffer;

@@ -28,27 +28,22 @@
 
 package ch.ntb.inf.kmip.skeleton;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
-
 import ch.ntb.inf.kmip.config.ContextProperties;
 import ch.ntb.inf.kmip.container.KMIPBatch;
 import ch.ntb.inf.kmip.container.KMIPContainer;
 import ch.ntb.inf.kmip.kmipenum.EnumResultReason;
 import ch.ntb.inf.kmip.kmipenum.EnumResultStatus;
-import ch.ntb.inf.kmip.process.decoder.KMIPDecoderInterface;
-import ch.ntb.inf.kmip.process.decoder.KMIPDecoderPool;
-import ch.ntb.inf.kmip.process.decoder.KMIPDecoderPoolOverflowException;
-import ch.ntb.inf.kmip.process.encoder.KMIPEncoderInterface;
-import ch.ntb.inf.kmip.process.encoder.KMIPEncoderPool;
-import ch.ntb.inf.kmip.process.encoder.KMIPEncoderPoolOverflowException;
+import ch.ntb.inf.kmip.process.decoder.*;
+import ch.ntb.inf.kmip.process.encoder.*;
 import ch.ntb.inf.kmip.skeleton.transport.KMIPSkeletonTransportLayerInterface;
 import ch.ntb.inf.kmip.utils.KMIPUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * The Skeleton encapsulates the whole KMIP functionality of the
@@ -59,7 +54,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
  */
 public class KMIPSkeleton implements KMIPSkeletonInterface{
 
-	private static final Logger logger = Logger.getLogger(KMIPSkeleton.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPSkeleton.class);
 	
 	private static final String DEFAULT_LOCATION_ENCODER = "ch.ntb.inf.kmip.process.encoder.KMIPEncoder";
 	private static final String DEFAULT_LOCATION_DECODER = "ch.ntb.inf.kmip.process.decoder.KMIPDecoder";
@@ -95,8 +90,6 @@ public class KMIPSkeleton implements KMIPSkeletonInterface{
 		try {
 			String xmlPath = this.getClass().getResource("config/").getPath();
 			ContextProperties props = new ContextProperties(xmlPath, "SkeletonConfig.xml");
-			
-	    	DOMConfigurator.configureAndWatch(props.getProperty("log4jLocation"));
 			
 			this.klmsAdapter = (KLMSAdapterInterface) getClass(props.getProperty("Adapter"), DEFAULT_LOCATION_ADAPTER).newInstance();
 			this.klmsAdapter.setKLMS(props.getProperty("KLMS"), DEFAULT_LOCATION_KLMS);

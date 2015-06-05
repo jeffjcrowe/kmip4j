@@ -12,7 +12,7 @@
  * @author     Stefanie Meile <stefaniemeile@gmail.com>
  * @author     Michael Guster <michael.guster@gmail.com>
  * @org.       NTB - University of Applied Sciences Buchs, (CH)
- * @copyright  Copyright © 2013, Stefanie Meile, Michael Guster
+ * @copyright  Copyright ï¿½ 2013, Stefanie Meile, Michael Guster
  * @license    Simplified BSD License (see LICENSE.TXT)
  * @version    1.0, 2013/08/09
  * @since      Class available since Release 1.0
@@ -48,14 +48,15 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.container.KMIPContainer;
 
 public class KMIPClientGUIXmlTab extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = -7794911332402570791L;
-	private static final Logger logger = Logger.getLogger(KMIPClientGUIXmlTab.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPClientGUIXmlTab.class);
 	private final JFileChooser fc = new JFileChooser("src/ch/ntb/inf/kmip/client/gui/xml/");
 	private final int vGap = 5;
 	private final int hGap = 5;

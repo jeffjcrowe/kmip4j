@@ -56,7 +56,8 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509KeyManager;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ch.ntb.inf.kmip.utils.KMIPUtils;
 
@@ -66,7 +67,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
  */
 public class KMIPStubTransportLayerHTTPSLocalHost implements KMIPStubTransportLayerInterface{
 
-	private static final Logger logger = Logger.getLogger(KMIPStubTransportLayerHTTP.class);
+	private static final Logger logger = LoggerFactory.getLogger(KMIPStubTransportLayerHTTP.class);
 
 	static {
 	    // for localhost testing only

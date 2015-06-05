@@ -28,7 +28,8 @@ package ch.ntb.inf.kmip.test;
 
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import ch.ntb.inf.kmip.utils.KMIPUtils;
@@ -40,7 +41,7 @@ import ch.ntb.inf.kmip.utils.KMIPUtils;
  */
 public class UCStringCompare {
 
-	private static final Logger logger = Logger.getLogger(UCStringCompare.class);
+	private static final Logger logger = LoggerFactory.getLogger(UCStringCompare.class);
 	
 	public static int testingOption;
 	public static final int NONE = 0;
